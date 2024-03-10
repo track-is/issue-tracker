@@ -1,15 +1,22 @@
 package com.api.issuetacker.service;
 
+import com.api.issuetacker.dto.request.issue.CreateIssueRequest;
+import com.api.issuetacker.dto.response.IssueResponse;
 import com.api.issuetacker.dto.response.PaginationResponse;
 import com.api.issuetacker.entity.Issue;
+import com.api.issuetacker.enums.IssuePriority;
 import com.api.issuetacker.enums.IssueStatus;
+import com.api.issuetacker.exception.BadRequestException;
+import com.api.issuetacker.exception.NotFoundException;
 import com.api.issuetacker.repository.IssueRepository;
 import com.api.issuetacker.util.StringHelper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 
@@ -17,6 +24,9 @@ import java.util.*;
 @RequiredArgsConstructor
 public class IssueService {
     private final IssueRepository issueRepo;
+
+    @Autowired
+    FirebaseService firebaseService;
 
     public PaginationResponse<Issue> getAll(Map<String, String> searchQuery) {
         String[] statuses = {"title","status","createdAt"};
@@ -46,19 +56,29 @@ public class IssueService {
 //        return issueRepo.findByStatus(issueStatus, Sort.by(orderBy.equals("createdAt")?Sort.Direction.DESC: Sort.Direction.ASC, orderBy));
     }
 
-    public Issue getOne(Long id) throws Exception {
+    @Transactional
+    public IssueResponse getOne(Long id) throws Exception {
         Optional<Issue> issue = issueRepo.findById(id);
         if (issue.isPresent()) {
-            return issue.get();
+            return IssueResponse.convert(issue.get());
         }
-        throw new Exception("No matching record found");
+        throw new NotFoundException("No matching record found");
     }
 
-    public Issue create(Issue issue) throws Exception {
+    public Issue create(CreateIssueRequest issueRequest) throws Exception {
         try {
+            String imageURL = firebaseService.upload(issueRequest.getImage());
+            Issue issue = Issue.builder()
+                    .title(issueRequest.getTitle())
+                    .description(issueRequest.getDescription())
+                    .status(IssueStatus.OPEN)
+                    .priority(IssuePriority.LOW)
+                    .snapshotURL(imageURL)
+                    .build();
+
             return issueRepo.save(issue);
         } catch (Exception e) {
-            throw new Exception("Something went wrong");
+            throw new BadRequestException("Error creating Issue");
         }
     }
 

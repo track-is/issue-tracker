@@ -38,17 +38,6 @@ public class CreateIssueRequest {
     )
     private String description;
 
-    @NotBlank(message = "{not_blank}")
-    @Schema(
-            name = "status",
-            description = "Status of issue",
-            type = "String",
-            requiredMode = Schema.RequiredMode.REQUIRED,
-            example = "OPEN",
-            defaultValue = "NEW"
-    )
-    private @ValueOfEnum(enumClass = IssueStatus.class) String status;
-
     @Schema(
             name = "snapshot",
             description = "Snapshot of issue",

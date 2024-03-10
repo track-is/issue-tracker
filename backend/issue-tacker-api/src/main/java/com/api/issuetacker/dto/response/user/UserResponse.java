@@ -2,6 +2,7 @@ package com.api.issuetacker.dto.response.user;
 
 import com.api.issuetacker.dto.response.AbstractBaseResponse;
 import com.api.issuetacker.entity.User;
+import com.api.issuetacker.enums.RoleProfile;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
@@ -55,6 +56,15 @@ public class UserResponse extends AbstractBaseResponse {
     private List<String> roles;
 
     @Schema(
+            name = "roleProfile",
+            description = "role profile of the user",
+            type = "RoleProfile",
+            example = "TESTER"
+    )
+    private RoleProfile roleProfile;
+
+
+    @Schema(
         name = "emailVerifiedAt",
         description = "Date time field of user e-mail verified",
         type = "LocalDateTime",
@@ -103,5 +113,14 @@ public class UserResponse extends AbstractBaseResponse {
             .createdAt(user.getCreatedAt())
             .updatedAt(user.getUpdatedAt())
             .build();
+    }
+    public static UserResponse convertMinimal(User user) {
+        return UserResponse.builder()
+
+                .email(user.getEmail())
+                .name(user.getName())
+                .lastName(user.getLastName())
+                .roleProfile(user.getRoleProfile())
+                .build();
     }
 }

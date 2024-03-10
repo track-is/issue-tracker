@@ -26,10 +26,13 @@ public class Issue {
 
     private String description;
 
+    @Column(name = "snapshot_url")
+    private String snapshotURL;
+
     @Enumerated(EnumType.STRING)
     private IssuePriority priority;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER ,cascade = CascadeType.ALL)
     @JoinColumn(name="identifiedBy",referencedColumnName = "email", updatable = false)
     private User identifiedBy;
 

@@ -1,5 +1,8 @@
 package com.api.issuetacker.entity;
 
+import com.api.issuetacker.enums.IssuePriority;
+import com.api.issuetacker.enums.RoleProfile;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -35,6 +38,7 @@ public class User extends AbstractBaseEntity {
     @Column(name = "avatar", columnDefinition = "text")
     private String avatar;
 
+
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.DETACH)
     @JoinTable(name = "user_roles",
         joinColumns = @JoinColumn(
@@ -63,14 +67,22 @@ public class User extends AbstractBaseEntity {
     @Builder.Default
     private List<Role> roles = new ArrayList<>();
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role_profile")
+    private RoleProfile roleProfile;
+
+
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private EmailVerificationToken emailVerificationToken;
+
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private PasswordResetToken passwordResetToken;
 
+
     @Column(name = "email_verified_at")
     private LocalDateTime emailVerifiedAt;
+
 
     @Column(name = "blocked_at")
     private LocalDateTime blockedAt;

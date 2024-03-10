@@ -1,19 +1,23 @@
 package com.api.issuetacker.controller;
 
 import com.api.issuetacker.dto.request.issue.CreateIssueRequest;
+import com.api.issuetacker.dto.response.IssueResponse;
 import com.api.issuetacker.dto.response.PaginationResponse;
 import com.api.issuetacker.entity.Issue;
 import com.api.issuetacker.enums.IssueStatus;
+import com.api.issuetacker.service.FirebaseService;
 import com.api.issuetacker.service.ImageService;
 import com.api.issuetacker.service.IssueService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -32,6 +36,9 @@ public class IssueController extends AbstractBaseController {
     @Autowired
     private ImageService imageService;
 
+    @Autowired
+    FirebaseService firebaseService;
+
     @GetMapping
     public ResponseEntity<PaginationResponse> getAllIssues(@RequestParam Map<String,String> searchQuery) {
 
@@ -39,14 +46,14 @@ public class IssueController extends AbstractBaseController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Issue> getIssue(@PathVariable String id) throws Exception {
+    public ResponseEntity<IssueResponse> getIssue(@PathVariable String id) throws Exception {
         return ResponseEntity.ok(issueService.getOne(Long.parseLong(id)));
     }
 
     @PostMapping
-    public ResponseEntity<Issue> createIssue(@RequestBody Issue issue) throws Exception {
-        issue.setStatus(IssueStatus.OPEN);
-        return ResponseEntity.ok(issueService.create(issue));
+    public ResponseEntity<IssueResponse> createIssue(@ModelAttribute CreateIssueRequest issueRequest) throws Exception {
+        System.out.println(issueRequest.getTitle() + " "+issueRequest.getDescription() + " "+issueRequest.getImage().getOriginalFilename());
+        return ResponseEntity.ok(IssueResponse.convert(issueService.create(issueRequest)));
     }
 
     @PutMapping("/{id}")
@@ -68,13 +75,8 @@ public class IssueController extends AbstractBaseController {
             @ModelAttribute CreateIssueRequest request
             // Add other parameters
     ) throws IOException {
-        System.out.println(request.getStatus() + " "+request.getTitle());
-        String uploadDirectory = "src/main/resources/static/images/issues";
-        String adsImagesString =
-                imageService.saveImageToStorage(uploadDirectory, request.getImage());
-
-        // Save the adsImagesString in your database
-        // You can also associate it with other data in your Ads object
-        return ResponseEntity.ok(adsImagesString);
+//        String imageURL =firebaseService.upload(request.getImage());
+        System.out.println(request.getTitle() + " "+request.getDescription() + " "+request.getImage().getOriginalFilename());
+        return ResponseEntity.ok("imageURL");
     }
 }
