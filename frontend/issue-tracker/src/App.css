@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Madimi+One&display=swap");
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  font-family: "Ubuntu", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.app {
+  min-width: 80vw;
+}
+
+.app .logo-name {
+  font-family: "Madimi One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.nav-link {
+  @apply hover:bg-violet-100 px-3 py-1;
+}
