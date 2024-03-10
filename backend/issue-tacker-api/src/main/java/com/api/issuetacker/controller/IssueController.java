@@ -1,5 +1,6 @@
 package com.api.issuetacker.controller;
 
+import com.api.issuetacker.dto.request.issue.CreateIssueRequest;
 import com.api.issuetacker.dto.response.PaginationResponse;
 import com.api.issuetacker.entity.Issue;
 import com.api.issuetacker.enums.IssueStatus;
@@ -63,11 +64,14 @@ public class IssueController extends AbstractBaseController {
 
     @PostMapping("/image-upload")
     public ResponseEntity<?> uploadImage(
-            @RequestParam("image") MultipartFile image
+
+            @ModelAttribute CreateIssueRequest request
             // Add other parameters
     ) throws IOException {
+        System.out.println(request.getStatus() + " "+request.getTitle());
         String uploadDirectory = "src/main/resources/static/images/issues";
-        String adsImagesString = imageService.saveImageToStorage(uploadDirectory, image);
+        String adsImagesString =
+                imageService.saveImageToStorage(uploadDirectory, request.getImage());
 
         // Save the adsImagesString in your database
         // You can also associate it with other data in your Ads object
