@@ -1,8 +1,6 @@
 package com.api.issuetacker.entity;
 
-import com.api.issuetacker.enums.IssuePriority;
-import com.api.issuetacker.enums.RoleProfile;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.api.issuetacker.enums.RoleProfileEnum;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -68,9 +66,24 @@ public class User extends AbstractBaseEntity {
     private List<Role> roles = new ArrayList<>();
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "role_profile")
+    @Column(name = "role_profile_enum")
+    private RoleProfileEnum roleProfileEnum;
+
+//     Uncomment this
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "roleprofile_id", referencedColumnName = "id")
     private RoleProfile roleProfile;
 
+//    @ManyToMany
+//    @Column(name = "role_profile")
+//    private final List<RoleProfile> roleProfileList = new ArrayList<>();
+//    @ManyToMany(cascade = { CascadeType.ALL })
+//    @JoinTable(
+//            name = "user_role_profiles",
+//            joinColumns = { @JoinColumn(name = "user_id") },
+//            inverseJoinColumns = { @JoinColumn(name = "roleprofile_id") })
+//    @Builder.Default
+//    private List<RoleProfile> roleProfiles = new ArrayList<>();
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private EmailVerificationToken emailVerificationToken;

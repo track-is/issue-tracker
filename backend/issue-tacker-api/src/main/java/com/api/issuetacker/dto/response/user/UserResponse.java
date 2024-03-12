@@ -2,7 +2,7 @@ package com.api.issuetacker.dto.response.user;
 
 import com.api.issuetacker.dto.response.AbstractBaseResponse;
 import com.api.issuetacker.entity.User;
-import com.api.issuetacker.enums.RoleProfile;
+import com.api.issuetacker.enums.RoleProfileEnum;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
@@ -61,7 +61,7 @@ public class UserResponse extends AbstractBaseResponse {
             type = "RoleProfile",
             example = "TESTER"
     )
-    private RoleProfile roleProfile;
+    private RoleProfileEnum roleProfile;
 
 
     @Schema(
@@ -120,7 +120,7 @@ public class UserResponse extends AbstractBaseResponse {
                 .email(user.getEmail())
                 .name(user.getName())
                 .lastName(user.getLastName())
-                .roleProfile(user.getRoleProfile())
+                .roleProfile(user.getRoleProfileEnum())
                 .build();
     }
 }

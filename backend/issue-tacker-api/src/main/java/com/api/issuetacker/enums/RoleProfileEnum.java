@@ -1,6 +1,6 @@
 package com.api.issuetacker.enums;
 
-public enum RoleProfile {
+public enum RoleProfileEnum {
     DEVELOPER,
     DESIGNER,
     TECH_ANALYST,
@@ -11,8 +11,8 @@ public enum RoleProfile {
     REPORTING_MANAGER;
 
     static public boolean isMember(String roleProfile) {
-        RoleProfile[] roleProfiles = RoleProfile.values();
-        for (RoleProfile profile : roleProfiles)
+        RoleProfileEnum[] roleProfiles = RoleProfileEnum.values();
+        for (RoleProfileEnum profile : roleProfiles)
             if (profile.name().equals(roleProfile))
                 return true;
         return false;

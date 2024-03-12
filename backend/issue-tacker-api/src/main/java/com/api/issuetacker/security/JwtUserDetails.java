@@ -1,12 +1,14 @@
 package com.api.issuetacker.security;
 
 import com.api.issuetacker.entity.User;
+import com.api.issuetacker.enums.RoleProfileEnum;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -45,11 +47,22 @@ public final class JwtUserDetails implements UserDetails {
      * @param user User
      * @return JwtUserDetails
      */
-    public static JwtUserDetails create(final User user) {
-        List<GrantedAuthority> authorities = user.getRoles().stream()
-            .map(role -> new SimpleGrantedAuthority(role.getName().name()))
-            .collect(Collectors.toList());
+//    public static JwtUserDetails create(final User user) {
+//        List<GrantedAuthority> authorities = user.getRoles().stream()
+//            .map(role -> new SimpleGrantedAuthority(role.getName().name()))
+//            .collect(Collectors.toList());
+//
+//        return new JwtUserDetails(user.getId().toString(), user.getEmail(), user.getPassword(), authorities);
+//    }
 
+    public static JwtUserDetails create(final User user) {
+        List<RoleProfileEnum> roleProfiles = Collections.singletonList(user.getRoleProfileEnum());
+        List<GrantedAuthority> authorities = roleProfiles.stream()
+                .map(role -> new SimpleGrantedAuthority(role.name()))
+                .collect(Collectors.toList());
+//        authorities.forEach(grantedAuthority -> {
+//            System.out.println(grantedAuthority.getAuthority());
+//        });
         return new JwtUserDetails(user.getId().toString(), user.getEmail(), user.getPassword(), authorities);
     }
 
