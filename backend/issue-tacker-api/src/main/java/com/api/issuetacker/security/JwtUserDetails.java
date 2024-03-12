@@ -1,5 +1,6 @@
 package com.api.issuetacker.security;
 
+import com.api.issuetacker.entity.RoleAuthority;
 import com.api.issuetacker.entity.User;
 import com.api.issuetacker.enums.RoleProfileEnum;
 import lombok.Data;
@@ -56,10 +57,12 @@ public final class JwtUserDetails implements UserDetails {
 //    }
 
     public static JwtUserDetails create(final User user) {
+        List<RoleAuthority> authorityList = user.getRoleProfile().getRoleAuthorities();
         List<RoleProfileEnum> roleProfiles = Collections.singletonList(user.getRoleProfileEnum());
-        List<GrantedAuthority> authorities = roleProfiles.stream()
-                .map(role -> new SimpleGrantedAuthority(role.name()))
+        List<GrantedAuthority> authorities = authorityList.stream()
+                .map(i -> new SimpleGrantedAuthority(i.getName()))
                 .collect(Collectors.toList());
+//        System.out.println("--------------In JwtUserDetails-----------------");
 //        authorities.forEach(grantedAuthority -> {
 //            System.out.println(grantedAuthority.getAuthority());
 //        });

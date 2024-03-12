@@ -53,7 +53,7 @@ public class CustomAuthenticationManager implements AuthenticationManager {
             .toList();
         UserDetails userDetails = userService.loadUserByEmail(authentication.getName());
         UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(userDetails,
-            user.getPassword(), authorities);
+            user.getPassword(), authentication.getAuthorities());
         SecurityContextHolder.getContext().setAuthentication(auth);
 
         return auth;
