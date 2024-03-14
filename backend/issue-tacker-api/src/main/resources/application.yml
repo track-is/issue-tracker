@@ -63,15 +63,15 @@ spring:
       accept-case-insensitive-enums: true
   thymeleaf:
     enabled: true
-    prefix: classpath:/templates/
+    prefix: src/main/resources/templates/
     suffix: .html
     mode: HTML
     cache: false
   mail:
-    host: ${MAIL_HOST:localhost}
-    port: ${MAIL_PORT:1025}
-    username: ${MAIL_USERNAME:test@email.com}
-    password: ${MAIL_PASSWORD:}
+    host: ${MAIL_HOST:smtp.gmail.com}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_USERNAME:heasycare@gmail.com}
+    password: ${MAIL_PASSWORD:vaho hjte offl iavs}
     properties:
       mail:
         transport:
@@ -81,7 +81,7 @@ spring:
           ssl:
             enable: ${MAIL_SSL:false}
           tls:
-            enable: ${MAIL_TLS:false}
+            enable: ${MAIL_TLS:true}
 
 
 springdoc:

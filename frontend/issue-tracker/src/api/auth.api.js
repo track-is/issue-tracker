@@ -15,7 +15,7 @@ export const loginUser = async (payload) => {
   return res.data;
 };
 
-export const registerUser = async (payload) => {
+export const signupUser = async (payload) => {
   const { data } = { ...payload };
   await delay(2000);
   const res = await axios.post(`${BASE_URL}/register`, data, {

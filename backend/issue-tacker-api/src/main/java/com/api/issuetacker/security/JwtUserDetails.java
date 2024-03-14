@@ -8,6 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -58,10 +59,10 @@ public final class JwtUserDetails implements UserDetails {
 
     public static JwtUserDetails create(final User user) {
         List<RoleAuthority> authorityList = user.getRoleProfile().getRoleAuthorities();
-        List<RoleProfileEnum> roleProfiles = Collections.singletonList(user.getRoleProfileEnum());
         List<GrantedAuthority> authorities = authorityList.stream()
                 .map(i -> new SimpleGrantedAuthority(i.getName()))
                 .collect(Collectors.toList());
+//        List<GrantedAuthority> authorities = Arrays.asList(new SimpleGrantedAuthority("ISSUE_READ"));
 //        System.out.println("--------------In JwtUserDetails-----------------");
 //        authorities.forEach(grantedAuthority -> {
 //            System.out.println(grantedAuthority.getAuthority());

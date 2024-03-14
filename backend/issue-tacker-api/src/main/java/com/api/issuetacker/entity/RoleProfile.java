@@ -1,5 +1,6 @@
 package com.api.issuetacker.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
@@ -29,8 +30,15 @@ public class RoleProfile extends CustomBaseEntity implements GrantedAuthority {
     private List<RoleAuthority> roleAuthorities = new ArrayList<>();
 
     // Uncomment this
-    @OneToOne(mappedBy = "roleProfile")
-    private User user;
+//    @ManyToOne
+//    private User user;
+
+//    @OneToMany(mappedBy = "roleProfiles")
+//    private List<User> user;
+
+//    @JsonIgnore
+//    @OneToMany(fetch = FetchType.EAGER, mappedBy = "roleProfile", cascade = CascadeType.ALL)
+//    private List<User> users;
 
 //    @ManyToMany(mappedBy = "roleProfiles")
 //    private List<User> users = new ArrayList<>();

@@ -70,13 +70,16 @@ public class User extends AbstractBaseEntity {
     private RoleProfileEnum roleProfileEnum;
 
 //     Uncomment this
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "roleprofile_id", referencedColumnName = "id")
+//    @OneToMany(mappedBy = "user")
+//    private List<RoleProfile> roleProfiles;
+
+    @ManyToOne
+    @JoinColumn(name="roleprofile_id", nullable=true)
     private RoleProfile roleProfile;
 
 //    @ManyToMany
-//    @Column(name = "role_profile")
-//    private final List<RoleProfile> roleProfileList = new ArrayList<>();
+//    @Column(name = "role_profiles")
+//    private final List<RoleProfile> roleProfiles = new ArrayList<>();
 //    @ManyToMany(cascade = { CascadeType.ALL })
 //    @JoinTable(
 //            name = "user_role_profiles",

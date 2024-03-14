@@ -1,5 +1,6 @@
 import axios from "axios";
 import delay from "delay";
+import { getFromLS } from "../lib/localstore";
 
 const BASE_URL = "http://localhost:8080/issues";
 
@@ -12,7 +13,11 @@ export const fetchIssue = async (payload) => {
 };
 
 export const fetchIssuesList = async (searchParams) => {
+  const accessToken = JSON.parse(getFromLS("user"))?.accessToken;
   const res = await axios.get(`${BASE_URL}`, {
+    headers: {
+      Authorization: "Bearer " + accessToken,
+    },
     params: searchParams,
   });
   return res.data;

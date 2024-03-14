@@ -1,4 +1,6 @@
-import { Table } from "@mantine/core";
+import { Checkbox, Table } from "@mantine/core";
+import { useEffect, useState } from "react";
+import { FaArrowUp } from "react-icons/fa";
 import {
   Link,
   createSearchParams,
@@ -6,45 +8,67 @@ import {
   useSearchParams,
 } from "react-router-dom";
 import IssueStatusBadge from "../../../components/IssueStatusBadge";
-import { useEffect, useState } from "react";
-import { FaArrowUp } from "react-icons/fa";
 
-const IssuesTable = ({ issues }) => {
+const IssuesTable = ({ issues, selectedRows, setSelectedRows }) => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
 
   const [colName, setColName] = useState("id");
   const [isColClicked, setColCLicked] = useState(false);
+
   const columns = [
     {
       label: "Title",
       value: "title",
     },
     { label: "Status", value: "status" },
+
     { label: "Created At", value: "createdAt", classValue: "text-center" },
   ];
 
   const rows = issues?.map((item, idx) => (
-    <Table.Tr key={idx}>
-      <Table.Td>{(+searchParams.get("pageNo") - 1) * 10 + idx + 1}</Table.Td>
+    <Table.Tr
+      key={idx}
+      bg={
+        selectedRows.includes(item.issueCode)
+          ? "var(--mantine-color-blue-light)"
+          : undefined
+      }
+    >
+      <Table.Td>
+        <Checkbox
+          aria-label="Select row"
+          checked={selectedRows.includes(item.issueCode)}
+          onChange={(event) =>
+            setSelectedRows(
+              event.currentTarget.checked
+                ? [...selectedRows, item.issueCode]
+                : selectedRows.filter((position) => position !== item.issueCode)
+            )
+          }
+        />
+      </Table.Td>
+      {/* <Table.Td>{(+searchParams.get("pageNo") - 1) * 10 + idx + 1}</Table.Td> */}
+      <Table.Td>{item.issueCode}</Table.Td>
       <Table.Td>
         <Link to={`/issues/${item.id}`} className="mb-2 md:mb-0 text-black">
           {item.title}
         </Link>
       </Table.Td>
       <Table.Td>
-        <IssueStatusBadge status={item.status} classValue="text-normal" />
+        <IssueStatusBadge status={item.status} />
       </Table.Td>
+
       <Table.Td>
         {new Date(item.createdAt).toLocaleString(undefined, {
-          year: "2-digit",
+          year: "numeric",
           month: "short",
           day: "2-digit",
-          weekday: "long",
-          hour: "2-digit",
-          hour12: true,
-          minute: "2-digit",
-          second: "2-digit",
+          // weekday: "long",
+          // hour: "2-digit",
+          // hour12: true,
+          // minute: "2-digit",
+          // second: "2-digit",
         })}
       </Table.Td>
     </Table.Tr>
@@ -52,7 +76,8 @@ const IssuesTable = ({ issues }) => {
 
   const ths = (
     <Table.Tr>
-      <Table.Th>#</Table.Th>
+      <Table.Th></Table.Th>
+      <Table.Th>ID</Table.Th>
       {columns.map((col) => (
         <Table.Th
           key={col.label}
@@ -87,10 +112,18 @@ const IssuesTable = ({ issues }) => {
         : "",
     });
   }, [isColClicked, colName, navigate, searchParams]);
+
   return (
     <>
-      <Table highlightOnHover stickyHeader stickyHeaderOffset={0}>
-        <Table.Thead className="bg-gray-400 text-white">{ths}</Table.Thead>
+      <Table
+        highlightOnHover
+        stickyHeader
+        stickyHeaderOffset={0}
+        className="mt-4"
+      >
+        <Table.Thead className="bg-gray-100 text-gray-700 rounded-md">
+          {ths}
+        </Table.Thead>
         <Table.Tbody>{rows}</Table.Tbody>
       </Table>
     </>

@@ -8,7 +8,9 @@ import com.api.issuetacker.enums.IssueStatus;
 import com.api.issuetacker.service.FirebaseService;
 import com.api.issuetacker.service.ImageService;
 import com.api.issuetacker.service.IssueService;
+import com.api.issuetacker.util.RandomIdGenerator;
 import lombok.RequiredArgsConstructor;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.domain.Sort;
@@ -41,6 +43,9 @@ public class IssueController extends AbstractBaseController {
 
     @GetMapping
     public ResponseEntity<PaginationResponse> getAllIssues(@RequestParam Map<String,String> searchQuery) {
+//        String code = RandomStringUtils.random(8, "ABCDEFGHIJKLMNOPQRSTUVWSXYZ0123456789");
+//        System.out.println(code);
+        System.out.println(RandomIdGenerator.GetBase36(8));
 
         return ResponseEntity.ok(issueService.getAll(searchQuery));
     }
@@ -52,7 +57,6 @@ public class IssueController extends AbstractBaseController {
 
     @PostMapping
     public ResponseEntity<IssueResponse> createIssue(@ModelAttribute CreateIssueRequest issueRequest) throws Exception {
-        System.out.println(issueRequest.getTitle() + " "+issueRequest.getDescription() + " "+issueRequest.getImage().getOriginalFilename());
         return ResponseEntity.ok(IssueResponse.convert(issueService.create(issueRequest)));
     }
 

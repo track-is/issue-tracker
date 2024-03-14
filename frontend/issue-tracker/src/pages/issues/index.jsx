@@ -10,15 +10,22 @@ import {
   useSearchParams,
 } from "react-router-dom";
 import { Pagination } from "@mantine/core";
+import IssuesPageLoading from "./_components/IssuesPageLoading";
+import delay from "delay";
 
 const IssuesPage = () => {
   const [activePage, setPage] = useState(1);
+
+  const [selectedRows, setSelectedRows] = useState([]);
+
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
+
   const {
     data: res,
     error,
     isFetching,
+    isSuccess,
     refetch,
   } = useFetchIssuesList(searchParams);
 
@@ -31,6 +38,7 @@ const IssuesPage = () => {
         ? createSearchParams({
             ...Object.fromEntries([...searchParams]),
             pageNo: activePage,
+            orderBy: "id",
           }).toString()
         : "",
     });
@@ -39,6 +47,12 @@ const IssuesPage = () => {
   useEffect(() => {
     refetch();
   }, [searchParams, refetch]);
+
+  useEffect(() => {
+    console.log(selectedRows);
+  }, [selectedRows]);
+
+  // if (isFetching) return <IssuesPageLoading />;
   return (
     <div>
       <h3 className="mb-3">Current Issues</h3>
@@ -46,23 +60,34 @@ const IssuesPage = () => {
         {res?.items && (
           <IssueStatusFilter activePage={activePage} setPage={setPage} />
         )}
-        <IssueActions />
+        <IssueActions rows={selectedRows} />
       </div>
-      {res?.items && <IssuesTable issues={res?.items} />}
-      <div className="flex justify-center">
+      {res?.items ? (
+        <IssuesTable
+          issues={res?.items}
+          selectedRows={selectedRows}
+          setSelectedRows={setSelectedRows}
+        />
+      ) : (
+        <IssuesPageLoading />
+      )}
+      <div className="mt-4 flex justify-center">
         {res?.items && (
           <Pagination
             className="mt-4"
             page={activePage}
             onChange={setPage}
             total={res?.pages}
-            color="violet"
+            color="blue"
             radius="lg"
             boundaries={10}
             size="sm"
           />
         )}
       </div>
+      {/* <span className="mt-2 flex justify-center text-sm">
+        Showing {res?.items?.length} / {res?.total}
+      </span> */}
     </div>
   );
 };

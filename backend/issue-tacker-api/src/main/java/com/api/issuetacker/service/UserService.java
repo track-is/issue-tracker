@@ -3,6 +3,7 @@ package com.api.issuetacker.service;
 import com.api.issuetacker.dto.request.auth.RegisterRequest;
 import com.api.issuetacker.dto.request.auth.ResetPasswordRequest;
 import com.api.issuetacker.dto.request.user.*;
+import com.api.issuetacker.entity.RoleProfile;
 import com.api.issuetacker.entity.User;
 import com.api.issuetacker.entity.specification.UserFilterSpecification;
 import com.api.issuetacker.entity.specification.criteria.PaginationCriteria;
@@ -57,6 +58,8 @@ public class UserService {
     private final ApplicationEventPublisher eventPublisher;
 
     private final MessageSourceService messageSourceService;
+
+    private final RoleProfilePService roleProfilePService;
 
     /**
      * Get authentication.
@@ -192,9 +195,14 @@ public class UserService {
 
         User user = createUser(request);
         user.setRoles(List.of(roleService.findByName(Constants.RoleEnum.USER)));
+        RoleProfile roleProfile = roleProfilePService.findByName("DEVELOPER");
+
+        user.setRoleProfile(roleProfile);
         userRepository.save(user);
 
         emailVerificationEventPublisher(user);
+
+
 
         log.info("User registered with email: {}, {}", user.getEmail(), user.getId());
 
@@ -223,6 +231,7 @@ public class UserService {
         }
 
         userRepository.save(user);
+
 
         log.info("User created with email: {}, {}", user.getEmail(), user.getId());
 

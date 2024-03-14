@@ -65,7 +65,7 @@ const Navbar = () => {
                   <FaUser />
                 )
               }
-              name={user ? getInitials() : "GU"}
+              name={user ? getInitials() : null}
               email="hspoonlicker@outlook.com"
             />
           </Menu.Target>
@@ -89,9 +89,9 @@ const Navbar = () => {
             ) : (
               <>
                 <Menu.Item>
-                  <Link to="/login">Login</Link>
+                  <Link to="/auth/login">Login</Link>
                 </Menu.Item>
-                <Menu.Item>Register</Menu.Item>
+                <Menu.Item><Link to="/auth/signup">Signup</Link></Menu.Item>
               </>
             )}
           </Menu.Dropdown>

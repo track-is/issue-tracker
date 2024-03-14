@@ -4,6 +4,8 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import { Suspense, useEffect } from "react";
 import Navbar from "./pages/core/Navbar";
+import Spinner from "./components/Spinner";
+import { Toaster } from "sonner";
 
 function App() {
   useEffect(() => {}, []);
@@ -17,8 +19,9 @@ function App() {
           </a>
           <Navbar />
         </div>
-        <div className="mt-2">
-          <Suspense fallback={<div>Loading...</div>}>
+        <div className="mt-2 main-div">
+          <Suspense fallback={<Spinner />}>
+            <Toaster richColors position="top-right" />
             <AppRoutes isLoggedIn={false} />
           </Suspense>
         </div>

@@ -26,7 +26,7 @@ public class DashboardController extends AbstractBaseController {
 
     @GetMapping
 //    @Secured("DEVELOPER")
-    @PreAuthorize("hasAuthority('ISSUE_READ') or hasAuthority('ISSUE_CREATE')")
+    @PreAuthorize("hasAuthority('ISSUE_READ')")
     public ResponseEntity<String> dashboard() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 //        System.out.println("--------------------------------------------------------------");
@@ -37,6 +37,6 @@ public class DashboardController extends AbstractBaseController {
 
         User user = userService.findByEmail(jwtUser.getEmail());
 
-        return ResponseEntity.ok(messageSourceService.get(user.getRoleProfile().getName()));
+        return ResponseEntity.ok(messageSourceService.get("user.getRoleProfile().getName())"));
     }
 }

@@ -27,6 +27,7 @@ import org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver;
 import org.thymeleaf.spring6.SpringTemplateEngine;
 import org.thymeleaf.spring6.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.templatemode.TemplateMode;
+import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Locale;
@@ -117,29 +118,62 @@ public class AppConfig {
      *
      * @return SpringTemplateEngine
      */
-    @Bean
-    public SpringTemplateEngine springTemplateEngine() {
-        SpringTemplateEngine templateEngine = new SpringTemplateEngine();
-        templateEngine.addTemplateResolver(htmlTemplateResolver());
-
-        return templateEngine;
-    }
+//    @Bean
+//    public SpringTemplateEngine springTemplateEngine() {
+//        SpringTemplateEngine templateEngine = new SpringTemplateEngine();
+//        templateEngine.addTemplateResolver(htmlTemplateResolver());
+//
+//        return templateEngine;
+//    }
 
     /**
      * Spring resource template resolver bean.
      *
      * @return SpringResourceTemplateResolver
      */
-    @Bean
-    public SpringResourceTemplateResolver htmlTemplateResolver() {
-        SpringResourceTemplateResolver emailTemplateResolver = new SpringResourceTemplateResolver();
-        emailTemplateResolver.setPrefix("classpath:/templates/");
-        emailTemplateResolver.setSuffix(".html");
-        emailTemplateResolver.setTemplateMode(TemplateMode.HTML);
-        emailTemplateResolver.setCharacterEncoding(StandardCharsets.UTF_8.name());
+//    @Bean
+//    public SpringResourceTemplateResolver htmlTemplateResolver() {
+//        SpringResourceTemplateResolver emailTemplateResolver = new SpringResourceTemplateResolver();
+//        emailTemplateResolver.setPrefix("src/main/resources/templates/");
+//        emailTemplateResolver.setSuffix(".html");
+//        emailTemplateResolver.setTemplateMode(TemplateMode.HTML);
+//        emailTemplateResolver.setCharacterEncoding(StandardCharsets.UTF_8.name());
+//
+//        return emailTemplateResolver;
+//    }
 
-        return emailTemplateResolver;
+
+
+
+    @Bean
+    public ClassLoaderTemplateResolver templateResolver() {
+        ClassLoaderTemplateResolver resolver = new ClassLoaderTemplateResolver();
+
+        resolver.setPrefix("templates/"); // Location of thymeleaf template
+        resolver.setCacheable(false); // Turning of cache to facilitate template changes
+        resolver.setSuffix(".html"); // Template file extension
+        resolver.setTemplateMode("HTML"); // Template Type
+        resolver.setCharacterEncoding("UTF-8");
+
+        return resolver;
     }
+
+    @Bean
+    public SpringTemplateEngine templateEngine() {
+        SpringTemplateEngine engine = new SpringTemplateEngine();
+        engine.setTemplateResolver(templateResolver());
+
+        return engine;
+    }
+
+
+
+
+
+
+
+
+
 
     /**
      * Object mapper bean.

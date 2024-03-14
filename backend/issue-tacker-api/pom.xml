@@ -179,6 +179,7 @@
             <artifactId>firebase-admin</artifactId>
             <version>7.0.1</version>
         </dependency>
+
     </dependencies>
 <!--    <dependencies>-->
 <!--        <dependency>-->

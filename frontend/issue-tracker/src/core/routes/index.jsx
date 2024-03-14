@@ -7,6 +7,7 @@ import IssuesPage from "../../pages/issues";
 const Home = lazy(() => import("../../pages/home"));
 const Dashboard = lazy(() => import("../../pages/dashboard"));
 const Login = lazy(() => import("../../pages/auth/login"));
+const Signup = lazy(() => import("../../pages/auth/signup"));
 const Profile = lazy(() => import("../../pages/profile"));
 
 const AppRoutes = () => {
@@ -19,7 +20,8 @@ const AppRoutes = () => {
         <Route path="/profile" element={<Profile />} />
         <Route path="/issues" element={<IssuesPage />} />
       </Route>
-      <Route path="/login" element={<Login />} />
+      <Route path="/auth/login" element={<Login />} />
+      <Route path="/auth/signup" element={<Signup />} />
     </Routes>
   );
 };

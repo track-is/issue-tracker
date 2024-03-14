@@ -4,11 +4,14 @@ import com.api.issuetacker.dto.request.issue.CreateIssueRequest;
 import com.api.issuetacker.dto.response.IssueResponse;
 import com.api.issuetacker.dto.response.PaginationResponse;
 import com.api.issuetacker.entity.Issue;
+import com.api.issuetacker.entity.User;
 import com.api.issuetacker.enums.IssuePriority;
 import com.api.issuetacker.enums.IssueStatus;
 import com.api.issuetacker.exception.BadRequestException;
 import com.api.issuetacker.exception.NotFoundException;
 import com.api.issuetacker.repository.IssueRepository;
+import com.api.issuetacker.security.JwtUserDetails;
+import com.api.issuetacker.util.RandomIdGenerator;
 import com.api.issuetacker.util.StringHelper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +21,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.*;
 
 @Service
@@ -27,6 +31,11 @@ public class IssueService {
 
     @Autowired
     FirebaseService firebaseService;
+
+    @Autowired
+    UserService userService;
+    @Autowired
+    AuthenticationService authService;
 
     public PaginationResponse<Issue> getAll(Map<String, String> searchQuery) {
         String[] statuses = {"title","status","createdAt"};
@@ -67,17 +76,22 @@ public class IssueService {
 
     public Issue create(CreateIssueRequest issueRequest) throws Exception {
         try {
+            JwtUserDetails jwtUserDetails = authService.getPrincipal();
+            User ownerOfIssue = userService.findByEmail(jwtUserDetails.getEmail());
             String imageURL = firebaseService.upload(issueRequest.getImage());
             Issue issue = Issue.builder()
+                    .issueCode(RandomIdGenerator.GetBase36(8))
                     .title(issueRequest.getTitle())
                     .description(issueRequest.getDescription())
                     .status(IssueStatus.OPEN)
                     .priority(IssuePriority.LOW)
                     .snapshotURL(imageURL)
+                    .identifiedBy(ownerOfIssue)
+                    .createdAt(LocalDateTime.now())
                     .build();
-
             return issueRepo.save(issue);
         } catch (Exception e) {
+            System.out.println(e.getMessage());
             throw new BadRequestException("Error creating Issue");
         }
     }

@@ -5,6 +5,7 @@ import jakarta.mail.MessagingException;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.mail.MailException;
@@ -35,6 +36,7 @@ public class MailSenderService {
 
     private final MessageSourceService messageSourceService;
 
+    @Autowired
     private final JavaMailSender mailSender;
 
     private final SpringTemplateEngine templateEngine;
