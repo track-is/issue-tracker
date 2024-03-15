@@ -71,23 +71,25 @@ const IssuesPage = () => {
       ) : (
         <IssuesPageLoading />
       )}
-      <div className="mt-4 flex justify-center">
+      <div className="mt-4 flex flex-col items-center">
         {res?.items && (
-          <Pagination
-            className="mt-4"
-            page={activePage}
-            onChange={setPage}
-            total={res?.pages}
-            color="blue"
-            radius="lg"
-            boundaries={10}
-            size="sm"
-          />
+          <>
+            <Pagination
+              className="mt-2"
+              page={activePage}
+              onChange={setPage}
+              total={res?.pages}
+              color="blue"
+              radius="lg"
+              boundaries={10}
+              size="sm"
+            />
+            <span className="mt-4 py-1 px-4 text-sm font-bold bg-zinc-200 rounded-md text-center">
+              Results: {res?.items?.length} / {res?.total}
+            </span>
+          </>
         )}
       </div>
-      {/* <span className="mt-2 flex justify-center text-sm">
-        Showing {res?.items?.length} / {res?.total}
-      </span> */}
     </div>
   );
 };

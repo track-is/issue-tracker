@@ -22,8 +22,10 @@ const IssuesTable = ({ issues, selectedRows, setSelectedRows }) => {
       value: "title",
     },
     { label: "Status", value: "status" },
+    { label: "Reporter", value: "identifiedBy" },
+    { label: "Assignee", value: "assignedTo" },
 
-    { label: "Created At", value: "createdAt", classValue: "text-center" },
+    { label: "Created At", value: "createdAt", classValue: "text-right" },
   ];
 
   const rows = issues?.map((item, idx) => (
@@ -55,10 +57,11 @@ const IssuesTable = ({ issues, selectedRows, setSelectedRows }) => {
           {item.title}
         </Link>
       </Table.Td>
+      <Table.Td>{item.issueCode}</Table.Td>
+      <Table.Td>{item.issueCode}</Table.Td>
       <Table.Td>
         <IssueStatusBadge status={item.status} />
       </Table.Td>
-
       <Table.Td>
         {new Date(item.createdAt).toLocaleString(undefined, {
           year: "numeric",

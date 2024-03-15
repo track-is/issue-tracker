@@ -41,6 +41,11 @@ public class Issue {
     private User identifiedBy;
 
     @JsonIgnore
+    @ManyToOne(fetch = FetchType.EAGER )
+    @JoinColumn(name="assignedTo",referencedColumnName = "email")
+    private User assignedTo;
+
+    @JsonIgnore
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="updatedBy",referencedColumnName = "email")
     private User updatedBy;

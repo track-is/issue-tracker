@@ -6317,3 +6317,272 @@ Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'a
 2024-03-15 02:37:06.194 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-03-15 02:37:06.203 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2024-03-15 02:37:06.216 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-15 18:18:42.061 [restartedMain] INFO  c.a.i.IssueTackerApiApplication - Starting IssueTackerApiApplication using Java 17.0.10 with PID 119789 (/home/amol/full_stack/track_is/backend/issue-tacker-api/target/classes started by amol in /home/amol/full_stack/track_is/backend/issue-tacker-api)
+2024-03-15 18:18:42.064 [restartedMain] INFO  c.a.i.IssueTackerApiApplication - No active profile set, falling back to 1 default profile: "default"
+2024-03-15 18:18:42.161 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in /home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/grpc-netty-shaded-1.30.0.jar referenced one or more files that do not exist: file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/grpc-core-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/grpc-api-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/gson-2.8.6.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/annotations-4.1.1.4.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/animal-sniffer-annotations-1.18.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/error_prone_annotations-2.3.4.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/guava-28.2-android.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/perfmark-api-0.19.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/jsr305-3.0.2.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/grpc-context-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/failureaccess-1.0.1.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/checker-compat-qual-2.5.5.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/j2objc-annotations-1.3.jar
+2024-03-15 18:18:42.162 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in /home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-alts-1.30.0.jar referenced one or more files that do not exist: file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-auth-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-grpclb-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-protobuf-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-stub-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/commons-lang3-3.5.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/protobuf-java-util-3.12.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/protobuf-java-3.12.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/conscrypt-openjdk-uber-2.2.1.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/google-auth-library-oauth2-http-0.20.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-netty-shaded-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-core-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-protobuf-lite-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-api-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/guava-28.2-android.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/error_prone_annotations-2.3.4.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/google-auth-library-credentials-0.20.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/animal-sniffer-annotations-1.18.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/google-http-client-jackson2-1.34.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/google-http-client-1.34.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/perfmark-api-0.19.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/jsr305-3.0.2.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/proto-google-common-protos-1.17.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/auto-value-annotations-1.7.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/failureaccess-1.0.1.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/checker-compat-qual-2.5.5.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/j2objc-annotations-1.3.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-context-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/gson-2.8.6.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/annotations-4.1.1.4.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/httpclient-4.5.10.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/httpcore-4.4.12.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/opencensus-contrib-http-util-0.24.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/opencensus-api-0.24.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/jackson-core-2.10.1.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/commons-logging-1.2.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/commons-codec-1.11.jar
+2024-03-15 18:18:42.163 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-03-15 18:18:42.163 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-03-15 18:18:44.077 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-15 18:18:44.190 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 98 ms. Found 8 JPA repository interfaces.
+2024-03-15 18:18:45.417 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-03-15 18:18:45.430 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-03-15 18:18:45.430 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-15 18:18:45.486 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-03-15 18:18:45.487 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3323 ms
+2024-03-15 18:18:45.948 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-15 18:18:46.049 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-15 18:18:46.103 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-03-15 18:18:46.444 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-15 18:18:46.485 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-15 18:18:46.912 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3a692386
+2024-03-15 18:18:46.914 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-15 18:18:46.997 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-15 18:18:48.545 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-15 18:18:49.331 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-15 18:18:49.914 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-03-15 18:18:51.255 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-15 18:18:52.609 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@44312edb, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6bc6c56d, org.springframework.security.web.context.SecurityContextHolderFilter@5fdc587c, org.springframework.security.web.header.HeaderWriterFilter@66fc12fa, org.springframework.web.filter.CorsFilter@7e41a869, org.springframework.security.web.authentication.logout.LogoutFilter@33c37dae, com.api.issuetacker.security.JwtAuthenticationFilter@4420c1da, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@51711c15, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@63cfce31, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@76c1ed29, org.springframework.security.web.session.SessionManagementFilter@3fe49b4f, org.springframework.security.web.access.ExceptionTranslationFilter@6819e621, org.springframework.security.web.access.intercept.AuthorizationFilter@8360436]
+2024-03-15 18:18:53.849 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: src/main/resources/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-03-15 18:18:53.916 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-03-15 18:18:54.069 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-03-15 18:18:54.075 [restartedMain] INFO  c.a.i.IssueTackerApiApplication - Started IssueTackerApiApplication in 12.833 seconds (process running for 14.302)
+2024-03-15 18:18:54.420 [RMI TCP Connection(2)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-15 18:18:54.421 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-03-15 18:18:54.425 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2024-03-15 18:19:17.790 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-15 18:19:17.804 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-15 18:19:17.813 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-15 18:19:28.029 [restartedMain] INFO  c.a.i.IssueTackerApiApplication - Starting IssueTackerApiApplication using Java 17.0.10 with PID 120084 (/home/amol/full_stack/track_is/backend/issue-tacker-api/target/classes started by amol in /home/amol/full_stack/track_is/backend/issue-tacker-api)
+2024-03-15 18:19:28.033 [restartedMain] INFO  c.a.i.IssueTackerApiApplication - No active profile set, falling back to 1 default profile: "default"
+2024-03-15 18:19:28.158 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in /home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/grpc-netty-shaded-1.30.0.jar referenced one or more files that do not exist: file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/grpc-core-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/grpc-api-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/gson-2.8.6.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/annotations-4.1.1.4.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/animal-sniffer-annotations-1.18.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/error_prone_annotations-2.3.4.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/guava-28.2-android.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/perfmark-api-0.19.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/jsr305-3.0.2.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/grpc-context-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/failureaccess-1.0.1.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/checker-compat-qual-2.5.5.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/j2objc-annotations-1.3.jar
+2024-03-15 18:19:28.159 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in /home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-alts-1.30.0.jar referenced one or more files that do not exist: file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-auth-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-grpclb-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-protobuf-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-stub-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/commons-lang3-3.5.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/protobuf-java-util-3.12.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/protobuf-java-3.12.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/conscrypt-openjdk-uber-2.2.1.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/google-auth-library-oauth2-http-0.20.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-netty-shaded-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-core-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-protobuf-lite-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-api-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/guava-28.2-android.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/error_prone_annotations-2.3.4.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/google-auth-library-credentials-0.20.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/animal-sniffer-annotations-1.18.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/google-http-client-jackson2-1.34.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/google-http-client-1.34.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/perfmark-api-0.19.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/jsr305-3.0.2.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/proto-google-common-protos-1.17.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/auto-value-annotations-1.7.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/failureaccess-1.0.1.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/checker-compat-qual-2.5.5.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/j2objc-annotations-1.3.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-context-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/gson-2.8.6.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/annotations-4.1.1.4.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/httpclient-4.5.10.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/httpcore-4.4.12.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/opencensus-contrib-http-util-0.24.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/opencensus-api-0.24.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/jackson-core-2.10.1.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/commons-logging-1.2.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/commons-codec-1.11.jar
+2024-03-15 18:19:28.159 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-03-15 18:19:28.160 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-03-15 18:19:31.090 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-15 18:19:31.214 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 101 ms. Found 8 JPA repository interfaces.
+2024-03-15 18:19:32.477 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-03-15 18:19:32.491 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-03-15 18:19:32.492 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-15 18:19:32.551 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-03-15 18:19:32.551 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4390 ms
+2024-03-15 18:19:33.193 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-15 18:19:33.345 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-15 18:19:33.406 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-03-15 18:19:33.754 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-15 18:19:33.792 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-15 18:19:34.183 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@32f3b0c7
+2024-03-15 18:19:34.185 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-15 18:19:34.249 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-15 18:19:35.858 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-15 18:19:36.040 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-15 18:19:36.637 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-03-15 18:19:37.976 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-15 18:19:39.360 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5a5716fd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@20d32b0b, org.springframework.security.web.context.SecurityContextHolderFilter@131cd6d0, org.springframework.security.web.header.HeaderWriterFilter@3720084f, org.springframework.web.filter.CorsFilter@1de251d3, org.springframework.security.web.authentication.logout.LogoutFilter@71f2ed6a, com.api.issuetacker.security.JwtAuthenticationFilter@357e06fd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4f51456, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4e73131e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6ab4b4f6, org.springframework.security.web.session.SessionManagementFilter@78f54a83, org.springframework.security.web.access.ExceptionTranslationFilter@160da512, org.springframework.security.web.access.intercept.AuthorizationFilter@2b5bec7c]
+2024-03-15 18:19:40.232 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: src/main/resources/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-03-15 18:19:40.302 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-03-15 18:19:40.402 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-03-15 18:19:40.407 [restartedMain] INFO  c.a.i.IssueTackerApiApplication - Started IssueTackerApiApplication in 13.383 seconds (process running for 15.714)
+2024-03-15 18:19:49.323 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-15 18:19:49.323 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-03-15 18:19:49.326 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2024-03-15 18:19:49.551 [http-nio-8080-exec-1] INFO  c.a.issuetacker.service.AuthService - Login request received: amitkambli999@gmail.com
+2024-03-15 18:19:49.552 [http-nio-8080-exec-1] WARN  c.a.i.service.MessageSourceService - Translation message not found (): bad_credentials
+2024-03-15 18:19:50.328 [http-nio-8080-exec-1] INFO  c.a.issuetacker.service.AuthService - Token generated for user: 4933daf3-9ab4-4d27-b824-2744d6592321
+2024-03-15 18:19:50.360 [http-nio-8080-exec-1] INFO  c.a.i.s.JwtAuthenticationFilter - 127.0.0.1
+2024-03-15 18:20:25.030 [http-nio-8080-exec-2] INFO  c.a.i.s.JwtAuthenticationFilter - 127.0.0.1
+2024-03-15 18:21:39.870 [http-nio-8080-exec-5] INFO  c.a.i.s.JwtAuthenticationFilter - 127.0.0.1
+2024-03-15 18:21:42.439 [http-nio-8080-exec-6] INFO  c.a.i.s.JwtAuthenticationFilter - 127.0.0.1
+2024-03-15 18:21:45.162 [http-nio-8080-exec-7] INFO  c.a.i.s.JwtAuthenticationFilter - 127.0.0.1
+2024-03-15 18:21:47.427 [http-nio-8080-exec-8] INFO  c.a.i.s.JwtAuthenticationFilter - 127.0.0.1
+2024-03-15 18:21:49.765 [http-nio-8080-exec-9] INFO  c.a.i.s.JwtAuthenticationFilter - 127.0.0.1
+2024-03-15 18:21:51.915 [http-nio-8080-exec-10] INFO  c.a.i.s.JwtAuthenticationFilter - 127.0.0.1
+2024-03-15 18:21:53.967 [http-nio-8080-exec-1] INFO  c.a.i.s.JwtAuthenticationFilter - 127.0.0.1
+2024-03-15 18:21:56.215 [http-nio-8080-exec-2] INFO  c.a.i.s.JwtAuthenticationFilter - 127.0.0.1
+2024-03-15 18:21:58.572 [http-nio-8080-exec-3] INFO  c.a.i.s.JwtAuthenticationFilter - 127.0.0.1
+2024-03-15 18:22:01.248 [http-nio-8080-exec-4] INFO  c.a.i.s.JwtAuthenticationFilter - 127.0.0.1
+2024-03-15 18:22:03.859 [http-nio-8080-exec-5] INFO  c.a.i.s.JwtAuthenticationFilter - 127.0.0.1
+2024-03-15 18:22:05.752 [http-nio-8080-exec-6] INFO  c.a.i.s.JwtAuthenticationFilter - 127.0.0.1
+2024-03-15 18:22:12.189 [http-nio-8080-exec-7] INFO  c.a.i.s.JwtAuthenticationFilter - 127.0.0.1
+2024-03-15 18:22:14.344 [http-nio-8080-exec-8] INFO  c.a.i.s.JwtAuthenticationFilter - 127.0.0.1
+2024-03-15 18:22:16.804 [http-nio-8080-exec-9] INFO  c.a.i.s.JwtAuthenticationFilter - 127.0.0.1
+2024-03-15 18:22:19.255 [http-nio-8080-exec-10] INFO  c.a.i.s.JwtAuthenticationFilter - 127.0.0.1
+2024-03-15 18:22:21.404 [http-nio-8080-exec-1] INFO  c.a.i.s.JwtAuthenticationFilter - 127.0.0.1
+2024-03-15 18:22:23.760 [http-nio-8080-exec-2] INFO  c.a.i.s.JwtAuthenticationFilter - 127.0.0.1
+2024-03-15 18:22:25.908 [http-nio-8080-exec-3] INFO  c.a.i.s.JwtAuthenticationFilter - 127.0.0.1
+2024-03-15 18:22:28.162 [http-nio-8080-exec-4] INFO  c.a.i.s.JwtAuthenticationFilter - 127.0.0.1
+2024-03-15 18:22:30.313 [http-nio-8080-exec-5] INFO  c.a.i.s.JwtAuthenticationFilter - 127.0.0.1
+2024-03-15 18:22:40.862 [http-nio-8080-exec-7] INFO  c.a.i.s.JwtAuthenticationFilter - 127.0.0.1
+2024-03-15 18:22:51.975 [http-nio-8080-exec-3] INFO  c.a.i.s.JwtAuthenticationFilter - 127.0.0.1
+2024-03-15 18:23:07.585 [http-nio-8080-exec-10] INFO  c.a.i.s.JwtAuthenticationFilter - 127.0.0.1
+2024-03-15 18:35:30.724 [http-nio-8080-exec-4] ERROR c.a.i.security.JwtTokenProvider - [JWT] Expired JWT token!
+2024-03-15 18:35:30.798 [http-nio-8080-exec-4] ERROR c.a.i.s.JwtAuthenticationEntryPoint - Could not set user authentication in security context. Error: Expired JWT token!
+2024-03-15 18:35:30.799 [http-nio-8080-exec-4] ERROR c.a.i.exception.AppExceptionHandler - org.springframework.security.authentication.BadCredentialsException: Expired JWT token!
+2024-03-15 18:35:30.812 [http-nio-8080-exec-4] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:35:31.856 [http-nio-8080-exec-5] ERROR c.a.i.security.JwtTokenProvider - [JWT] Expired JWT token!
+2024-03-15 18:35:31.859 [http-nio-8080-exec-5] ERROR c.a.i.s.JwtAuthenticationEntryPoint - Could not set user authentication in security context. Error: Expired JWT token!
+2024-03-15 18:35:31.860 [http-nio-8080-exec-5] ERROR c.a.i.exception.AppExceptionHandler - org.springframework.security.authentication.BadCredentialsException: Expired JWT token!
+2024-03-15 18:35:31.861 [http-nio-8080-exec-5] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:35:33.870 [http-nio-8080-exec-6] ERROR c.a.i.security.JwtTokenProvider - [JWT] Expired JWT token!
+2024-03-15 18:35:33.871 [http-nio-8080-exec-6] ERROR c.a.i.s.JwtAuthenticationEntryPoint - Could not set user authentication in security context. Error: Expired JWT token!
+2024-03-15 18:35:33.872 [http-nio-8080-exec-6] ERROR c.a.i.exception.AppExceptionHandler - org.springframework.security.authentication.BadCredentialsException: Expired JWT token!
+2024-03-15 18:35:33.872 [http-nio-8080-exec-6] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:35:37.884 [http-nio-8080-exec-7] ERROR c.a.i.security.JwtTokenProvider - [JWT] Expired JWT token!
+2024-03-15 18:35:37.885 [http-nio-8080-exec-7] ERROR c.a.i.s.JwtAuthenticationEntryPoint - Could not set user authentication in security context. Error: Expired JWT token!
+2024-03-15 18:35:37.886 [http-nio-8080-exec-7] ERROR c.a.i.exception.AppExceptionHandler - org.springframework.security.authentication.BadCredentialsException: Expired JWT token!
+2024-03-15 18:35:37.887 [http-nio-8080-exec-7] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:36:44.213 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-15 18:36:44.639 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-15 18:36:45.142 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-15 18:38:28.279 [restartedMain] INFO  c.a.i.IssueTackerApiApplication - Starting IssueTackerApiApplication using Java 17.0.10 with PID 125181 (/home/amol/full_stack/track_is/backend/issue-tacker-api/target/classes started by amol in /home/amol/full_stack/track_is/backend/issue-tacker-api)
+2024-03-15 18:38:28.282 [restartedMain] INFO  c.a.i.IssueTackerApiApplication - No active profile set, falling back to 1 default profile: "default"
+2024-03-15 18:38:28.375 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in /home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/grpc-netty-shaded-1.30.0.jar referenced one or more files that do not exist: file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/grpc-core-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/grpc-api-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/gson-2.8.6.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/annotations-4.1.1.4.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/animal-sniffer-annotations-1.18.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/error_prone_annotations-2.3.4.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/guava-28.2-android.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/perfmark-api-0.19.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/jsr305-3.0.2.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/grpc-context-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/failureaccess-1.0.1.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/checker-compat-qual-2.5.5.jar,file:/home/amol/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/j2objc-annotations-1.3.jar
+2024-03-15 18:38:28.376 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in /home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-alts-1.30.0.jar referenced one or more files that do not exist: file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-auth-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-grpclb-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-protobuf-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-stub-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/commons-lang3-3.5.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/protobuf-java-util-3.12.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/protobuf-java-3.12.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/conscrypt-openjdk-uber-2.2.1.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/google-auth-library-oauth2-http-0.20.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-netty-shaded-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-core-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-protobuf-lite-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-api-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/guava-28.2-android.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/error_prone_annotations-2.3.4.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/google-auth-library-credentials-0.20.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/animal-sniffer-annotations-1.18.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/google-http-client-jackson2-1.34.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/google-http-client-1.34.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/perfmark-api-0.19.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/jsr305-3.0.2.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/proto-google-common-protos-1.17.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/auto-value-annotations-1.7.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/failureaccess-1.0.1.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/checker-compat-qual-2.5.5.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/j2objc-annotations-1.3.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-context-1.30.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/gson-2.8.6.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/annotations-4.1.1.4.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/httpclient-4.5.10.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/httpcore-4.4.12.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/opencensus-contrib-http-util-0.24.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/opencensus-api-0.24.0.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/jackson-core-2.10.1.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/commons-logging-1.2.jar,file:/home/amol/.m2/repository/io/grpc/grpc-alts/1.30.0/commons-codec-1.11.jar
+2024-03-15 18:38:28.376 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-03-15 18:38:28.376 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-03-15 18:38:30.315 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-15 18:38:30.425 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 97 ms. Found 8 JPA repository interfaces.
+2024-03-15 18:38:31.680 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-03-15 18:38:31.693 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-03-15 18:38:31.694 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-15 18:38:31.749 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-03-15 18:38:31.749 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3372 ms
+2024-03-15 18:38:32.205 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-15 18:38:32.303 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-15 18:38:32.355 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-03-15 18:38:32.723 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-15 18:38:32.767 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-15 18:38:33.248 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7cc18c5c
+2024-03-15 18:38:33.251 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-15 18:38:33.354 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-15 18:38:34.918 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-15 18:38:35.351 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-15 18:38:35.912 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-03-15 18:38:37.208 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-03-15 18:38:38.435 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@144d0ac9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@833400e, org.springframework.security.web.context.SecurityContextHolderFilter@5ffd45aa, org.springframework.security.web.header.HeaderWriterFilter@7315e0ac, org.springframework.web.filter.CorsFilter@6a099cab, org.springframework.security.web.authentication.logout.LogoutFilter@3419f359, com.api.issuetacker.security.JwtAuthenticationFilter@3c161efa, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5646bde3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@94b051c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7bab1a9e, org.springframework.security.web.session.SessionManagementFilter@388a456e, org.springframework.security.web.access.ExceptionTranslationFilter@61a77b0b, org.springframework.security.web.access.intercept.AuthorizationFilter@32e7ba99]
+2024-03-15 18:38:39.204 [restartedMain] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: src/main/resources/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-03-15 18:38:39.251 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-03-15 18:38:39.346 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-03-15 18:38:39.351 [restartedMain] INFO  c.a.i.IssueTackerApiApplication - Started IssueTackerApiApplication in 11.683 seconds (process running for 13.909)
+2024-03-15 18:38:47.283 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-15 18:38:47.285 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-03-15 18:38:47.289 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2024-03-15 18:38:47.596 [http-nio-8080-exec-2] INFO  c.a.issuetacker.service.AuthService - Login request received: amitkambli999@gmail.com
+2024-03-15 18:38:47.597 [http-nio-8080-exec-2] WARN  c.a.i.service.MessageSourceService - Translation message not found (en_GB): bad_credentials
+2024-03-15 18:38:48.213 [http-nio-8080-exec-2] INFO  c.a.issuetacker.service.AuthService - Token generated for user: 4933daf3-9ab4-4d27-b824-2744d6592321
+2024-03-15 18:38:48.250 [http-nio-8080-exec-2] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:38:54.011 [http-nio-8080-exec-4] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:38:57.120 [http-nio-8080-exec-6] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:38:58.513 [http-nio-8080-exec-8] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:39:00.409 [http-nio-8080-exec-9] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:39:01.984 [http-nio-8080-exec-10] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:40:23.623 [http-nio-8080-exec-2] INFO  c.a.issuetacker.service.AuthService - Login request received: amitkambli999@gmail.com
+2024-03-15 18:40:23.624 [http-nio-8080-exec-2] WARN  c.a.i.service.MessageSourceService - Translation message not found (en_GB): bad_credentials
+2024-03-15 18:40:23.844 [http-nio-8080-exec-2] INFO  c.a.issuetacker.service.AuthService - Token generated for user: 4933daf3-9ab4-4d27-b824-2744d6592321
+2024-03-15 18:40:23.847 [http-nio-8080-exec-2] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:40:24.066 [http-nio-8080-exec-3] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:41:17.975 [http-nio-8080-exec-4] INFO  c.a.issuetacker.service.AuthService - Login request received: amitkambli999@gmail.com
+2024-03-15 18:41:17.976 [http-nio-8080-exec-4] WARN  c.a.i.service.MessageSourceService - Translation message not found (en_GB): bad_credentials
+2024-03-15 18:41:18.149 [http-nio-8080-exec-4] ERROR c.a.i.s.CustomAuthenticationManager - AuthenticationCredentialsNotFoundException occurred for amitkambli999@gmail.com
+2024-03-15 18:41:18.150 [http-nio-8080-exec-4] WARN  c.a.i.service.MessageSourceService - Translation message not found (en_GB): bad_credentials
+2024-03-15 18:41:18.155 [http-nio-8080-exec-4] ERROR c.a.i.exception.AppExceptionHandler - org.springframework.security.authentication.AuthenticationCredentialsNotFoundException: bad_credentials
+2024-03-15 18:41:18.159 [http-nio-8080-exec-4] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.security.authentication.AuthenticationCredentialsNotFoundException: bad_credentials]
+2024-03-15 18:41:18.161 [http-nio-8080-exec-4] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:42:40.843 [http-nio-8080-exec-6] INFO  c.a.issuetacker.service.AuthService - Login request received: amitkambli999@gmail.com
+2024-03-15 18:42:40.845 [http-nio-8080-exec-6] WARN  c.a.i.service.MessageSourceService - Translation message not found (en_GB): bad_credentials
+2024-03-15 18:42:41.017 [http-nio-8080-exec-6] ERROR c.a.i.s.CustomAuthenticationManager - AuthenticationCredentialsNotFoundException occurred for amitkambli999@gmail.com
+2024-03-15 18:42:41.018 [http-nio-8080-exec-6] WARN  c.a.i.service.MessageSourceService - Translation message not found (en_GB): bad_credentials
+2024-03-15 18:42:41.020 [http-nio-8080-exec-6] ERROR c.a.i.exception.AppExceptionHandler - org.springframework.security.authentication.AuthenticationCredentialsNotFoundException: bad_credentials
+2024-03-15 18:42:41.023 [http-nio-8080-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.security.authentication.AuthenticationCredentialsNotFoundException: bad_credentials]
+2024-03-15 18:42:41.025 [http-nio-8080-exec-6] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:42:51.715 [http-nio-8080-exec-7] INFO  c.a.issuetacker.service.AuthService - Login request received: amitkambli999@gmail.com
+2024-03-15 18:42:51.715 [http-nio-8080-exec-7] WARN  c.a.i.service.MessageSourceService - Translation message not found (en_GB): bad_credentials
+2024-03-15 18:42:51.906 [http-nio-8080-exec-7] INFO  c.a.issuetacker.service.AuthService - Token generated for user: 4933daf3-9ab4-4d27-b824-2744d6592321
+2024-03-15 18:42:51.908 [http-nio-8080-exec-7] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:42:56.107 [http-nio-8080-exec-8] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:42:59.256 [http-nio-8080-exec-9] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:44:12.677 [http-nio-8080-exec-2] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:44:12.807 [http-nio-8080-exec-3] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:44:14.492 [http-nio-8080-exec-4] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:44:14.552 [http-nio-8080-exec-5] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:44:15.744 [http-nio-8080-exec-6] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:44:15.830 [http-nio-8080-exec-7] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:44:17.076 [http-nio-8080-exec-8] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:44:17.148 [http-nio-8080-exec-9] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:44:18.230 [http-nio-8080-exec-10] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:44:18.278 [http-nio-8080-exec-1] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:44:19.026 [http-nio-8080-exec-2] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:44:19.067 [http-nio-8080-exec-3] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:44:20.497 [http-nio-8080-exec-4] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:44:20.585 [http-nio-8080-exec-5] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:44:22.256 [http-nio-8080-exec-6] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:44:22.306 [http-nio-8080-exec-7] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:44:37.490 [http-nio-8080-exec-8] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:44:37.548 [http-nio-8080-exec-9] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:44:41.519 [http-nio-8080-exec-10] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:44:41.617 [http-nio-8080-exec-1] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:44:47.074 [http-nio-8080-exec-2] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:44:47.137 [http-nio-8080-exec-3] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:44:59.038 [http-nio-8080-exec-4] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:44:59.073 [http-nio-8080-exec-5] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:45:07.518 [http-nio-8080-exec-6] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:45:07.628 [http-nio-8080-exec-7] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:45:09.384 [http-nio-8080-exec-8] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:45:09.481 [http-nio-8080-exec-9] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:45:11.484 [http-nio-8080-exec-10] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:45:11.554 [http-nio-8080-exec-1] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:45:32.796 [http-nio-8080-exec-2] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:45:32.906 [http-nio-8080-exec-3] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:45:37.740 [http-nio-8080-exec-4] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:45:37.902 [http-nio-8080-exec-5] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:46:28.245 [http-nio-8080-exec-6] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:46:28.328 [http-nio-8080-exec-7] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:46:30.176 [http-nio-8080-exec-8] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:46:30.279 [http-nio-8080-exec-9] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:46:47.752 [http-nio-8080-exec-10] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:48:58.937 [http-nio-8080-exec-3] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:48:59.034 [http-nio-8080-exec-4] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:49:07.959 [http-nio-8080-exec-5] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:49:36.594 [http-nio-8080-exec-6] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:49:38.974 [http-nio-8080-exec-7] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:49:41.727 [http-nio-8080-exec-8] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:49:48.481 [http-nio-8080-exec-9] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:49:59.866 [http-nio-8080-exec-1] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:50:03.290 [http-nio-8080-exec-2] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:50:07.590 [http-nio-8080-exec-3] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:50:23.217 [http-nio-8080-exec-4] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:50:59.264 [http-nio-8080-exec-6] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:51:13.469 [http-nio-8080-exec-8] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:51:17.959 [http-nio-8080-exec-10] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:51:21.223 [http-nio-8080-exec-2] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:51:26.529 [http-nio-8080-exec-4] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:51:29.270 [http-nio-8080-exec-6] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:51:52.533 [http-nio-8080-exec-8] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:51:55.355 [http-nio-8080-exec-10] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:52:01.963 [http-nio-8080-exec-2] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:52:18.636 [http-nio-8080-exec-4] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:52:23.092 [http-nio-8080-exec-6] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:52:45.366 [http-nio-8080-exec-8] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:52:50.666 [http-nio-8080-exec-10] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:52:56.194 [http-nio-8080-exec-2] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:53:03.207 [http-nio-8080-exec-4] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:53:10.264 [http-nio-8080-exec-6] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:53:13.706 [http-nio-8080-exec-8] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:53:16.725 [http-nio-8080-exec-10] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:53:18.018 [http-nio-8080-exec-2] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:53:20.878 [http-nio-8080-exec-4] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:53:52.987 [http-nio-8080-exec-6] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:53:55.067 [http-nio-8080-exec-8] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:54:01.846 [http-nio-8080-exec-10] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:54:07.676 [http-nio-8080-exec-2] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:54:11.589 [http-nio-8080-exec-4] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:54:14.966 [http-nio-8080-exec-6] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:54:33.167 [http-nio-8080-exec-8] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:54:37.530 [http-nio-8080-exec-10] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:54:48.963 [http-nio-8080-exec-2] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:54:52.400 [http-nio-8080-exec-4] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:54:55.876 [http-nio-8080-exec-6] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:54:58.569 [http-nio-8080-exec-8] INFO  c.a.i.s.JwtAuthenticationFilter - 0:0:0:0:0:0:0:1
+2024-03-15 18:55:21.665 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-15 18:55:21.680 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-15 18:55:21.699 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
