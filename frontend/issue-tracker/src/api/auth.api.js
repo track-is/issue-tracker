@@ -25,3 +25,26 @@ export const signupUser = async (payload) => {
   });
   return res.data;
 };
+
+export const forgotPassword = async (payload) => {
+  const { data } = { ...payload };
+  await delay(2000);
+  const res = await axios.post(`${BASE_URL}/reset-password`, data, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  return res.data;
+};
+
+
+export const resetPassword = async (payload) => {
+  const { token, data } = { ...payload };
+  await delay(2000);
+  const res = await axios.post(`${BASE_URL}/reset-password/${token}`, data, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  return res.data;
+};

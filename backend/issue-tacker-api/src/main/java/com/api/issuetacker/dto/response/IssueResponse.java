@@ -41,6 +41,14 @@ public class IssueResponse {
     private String description;
 
     @Schema(
+            name = "Issue Code",
+            description = "Issue code (unique)",
+            type = "String",
+            example = "UIK785K"
+    )
+    private String issueCode;
+
+    @Schema(
             name = "status",
             description = "Status of issue",
             type = "String",
@@ -100,6 +108,7 @@ public class IssueResponse {
         return IssueResponse.builder()
                 .id(issue.getId())
                 .title(issue.getTitle())
+                .issueCode(issue.getIssueCode())
                 .description(issue.getDescription())
                 .status(String.valueOf(issue.getStatus()))
                 .priority(String.valueOf(issue.getPriority()))

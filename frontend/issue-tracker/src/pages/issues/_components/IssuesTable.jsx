@@ -1,4 +1,4 @@
-import { Checkbox, Table } from "@mantine/core";
+import { Avatar, Checkbox, Table } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { FaArrowUp } from "react-icons/fa";
 import {
@@ -15,19 +15,27 @@ const IssuesTable = ({ issues, selectedRows, setSelectedRows }) => {
 
   const [colName, setColName] = useState("id");
   const [isColClicked, setColCLicked] = useState(false);
+  const [isCheckColClicked, setCheckColClicked] = useState(false);
 
   const columns = [
     {
       label: "Title",
       value: "title",
     },
-    { label: "Status", value: "status" },
+
     { label: "Reporter", value: "identifiedBy" },
     { label: "Assignee", value: "assignedTo" },
-
+    { label: "Status", value: "status" },
     { label: "Created At", value: "createdAt", classValue: "text-right" },
   ];
 
+  useEffect(() => {
+    function handleSelectAll() {
+      if (isCheckColClicked) selectedRows = issues.map((i) => i.issueCode);
+      console.log(selectedRows);
+    }
+    handleSelectAll();
+  }, [isCheckColClicked]);
   const rows = issues?.map((item, idx) => (
     <Table.Tr
       key={idx}
@@ -40,7 +48,9 @@ const IssuesTable = ({ issues, selectedRows, setSelectedRows }) => {
       <Table.Td>
         <Checkbox
           aria-label="Select row"
-          checked={selectedRows.includes(item.issueCode)}
+          checked={
+            isCheckColClicked ? true : selectedRows.includes(item.issueCode)
+          }
           onChange={(event) =>
             setSelectedRows(
               event.currentTarget.checked
@@ -57,8 +67,15 @@ const IssuesTable = ({ issues, selectedRows, setSelectedRows }) => {
           {item.title}
         </Link>
       </Table.Td>
-      <Table.Td>{item.issueCode}</Table.Td>
-      <Table.Td>{item.issueCode}</Table.Td>
+      <Table.Td className="flex items-center gap-2">
+        <Avatar
+          src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-7.png"
+          alt="reporter img"
+          size={20}
+        />
+        {item.identifiedBy?.name + " " + item.identifiedBy?.lastName}
+      </Table.Td>
+      <Table.Td>Amol Khedekar</Table.Td>
       <Table.Td>
         <IssueStatusBadge status={item.status} />
       </Table.Td>
@@ -79,7 +96,14 @@ const IssuesTable = ({ issues, selectedRows, setSelectedRows }) => {
 
   const ths = (
     <Table.Tr>
-      <Table.Th></Table.Th>
+      <Table.Th>
+        <Checkbox
+          checked={isCheckColClicked}
+          onChange={() => {
+            setCheckColClicked(!isCheckColClicked);
+          }}
+        />
+      </Table.Th>
       <Table.Th>ID</Table.Th>
       {columns.map((col) => (
         <Table.Th

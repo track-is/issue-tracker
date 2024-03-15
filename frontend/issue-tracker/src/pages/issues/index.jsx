@@ -55,7 +55,7 @@ const IssuesPage = () => {
   // if (isFetching) return <IssuesPageLoading />;
   return (
     <div>
-      <h3 className="mb-3">Current Issues</h3>
+      <h3 className="mb-3">Issues</h3>
       <div className="flex justify-between ">
         {res?.items && (
           <IssueStatusFilter activePage={activePage} setPage={setPage} />
@@ -84,9 +84,9 @@ const IssuesPage = () => {
               boundaries={10}
               size="sm"
             />
-            <span className="mt-4 py-1 px-4 text-sm font-bold bg-zinc-200 rounded-md text-center">
+            {/* <span className="mt-4 py-1 px-4 text-sm font-bold bg-zinc-200 rounded-md text-center">
               Results: {res?.items?.length} / {res?.total}
-            </span>
+            </span> */}
           </>
         )}
       </div>

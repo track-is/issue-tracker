@@ -297,6 +297,8 @@ public class AuthController extends AbstractBaseController {
         @Parameter(description = "Request body to update password", required = true)
         @RequestBody @Valid ResetPasswordRequest request
     ) {
+        System.out.println(token);
+        System.out.println(request.getPassword() + " "+request.getPasswordConfirm());
         userService.resetPassword(token, request);
 
         return ResponseEntity.ok(SuccessResponse.builder()

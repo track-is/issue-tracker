@@ -23,6 +23,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -37,7 +38,7 @@ public class IssueService {
     @Autowired
     AuthenticationService authService;
 
-    public PaginationResponse<Issue> getAll(Map<String, String> searchQuery) {
+    public PaginationResponse<IssueResponse> getAll(Map<String, String> searchQuery) {
         String[] statuses = {"title","status","createdAt"};
         List<String> orderByList =  new ArrayList<>(Arrays.asList(statuses));
         String orderBy = !StringHelper.empty(searchQuery.get("orderBy"))   ? searchQuery.get("orderBy") : "id";
@@ -54,13 +55,15 @@ public class IssueService {
 //            return (List<Issue>) issueRepo.findAll(
 //                    Sort.by(orderBy.equals("createdAt") ? Sort.Direction.DESC : Sort.Direction.ASC, orderBy));
             Page<Issue>  issuePage = getIssuesByPagination2(pageNo, pageSize, Sort.by( orderBy));
-            return new PaginationResponse<>(issuePage, issuePage.getContent());
+            List<IssueResponse> issueList = issuePage.getContent().stream().map(IssueResponse::convert).toList();
+            return new PaginationResponse<>(issuePage, issueList);
         }
 
         IssueStatus issueStatus = IssueStatus.valueOf(status);
 
         Page<Issue>  issuePage = getIssuesWithStatusByPagination2(issueStatus, pageNo, pageSize,Sort.by(orderBy) );
-        return new PaginationResponse<>(issuePage, issuePage.getContent());
+        List<IssueResponse> issueList = issuePage.getContent().stream().map(IssueResponse::convert).toList();
+        return new PaginationResponse<>(issuePage, issueList);
 
 //        return issueRepo.findByStatus(issueStatus, Sort.by(orderBy.equals("createdAt")?Sort.Direction.DESC: Sort.Direction.ASC, orderBy));
     }
