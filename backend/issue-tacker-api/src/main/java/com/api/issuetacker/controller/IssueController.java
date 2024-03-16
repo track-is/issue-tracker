@@ -52,7 +52,7 @@ public class IssueController extends AbstractBaseController {
 
     @GetMapping("/{id}")
     public ResponseEntity<IssueResponse> getIssue(@PathVariable String id) throws Exception {
-        return ResponseEntity.ok(issueService.getOne(Long.parseLong(id)));
+        return ResponseEntity.ok(issueService.getOne(id));
     }
 
     @PostMapping
@@ -62,7 +62,7 @@ public class IssueController extends AbstractBaseController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Issue> updateIssue(@PathVariable String id, @RequestBody Issue issue) throws Exception {
-        return ResponseEntity.ok(issueService.update(Long.parseLong(id),issue));
+        return ResponseEntity.ok(issueService.update(id,issue));
     }
 
     @GetMapping("/paginate")

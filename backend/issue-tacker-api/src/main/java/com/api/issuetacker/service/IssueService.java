@@ -69,8 +69,8 @@ public class IssueService {
     }
 
     @Transactional
-    public IssueResponse getOne(Long id) throws Exception {
-        Optional<Issue> issue = issueRepo.findById(id);
+    public IssueResponse getOne(String id) throws Exception {
+        Optional<Issue> issue = issueRepo.findById(UUID.fromString(id));
         if (issue.isPresent()) {
             return IssueResponse.convert(issue.get());
         }
@@ -80,17 +80,18 @@ public class IssueService {
     public Issue create(CreateIssueRequest issueRequest) throws Exception {
         try {
             JwtUserDetails jwtUserDetails = authService.getPrincipal();
-            User ownerOfIssue = userService.findByEmail(jwtUserDetails.getEmail());
+            User issueReporter = userService.findByEmail(jwtUserDetails.getEmail());
             String imageURL = firebaseService.upload(issueRequest.getImage());
             Issue issue = Issue.builder()
                     .issueCode(RandomIdGenerator.GetBase36(8))
                     .title(issueRequest.getTitle())
                     .description(issueRequest.getDescription())
+                    .summary(issueRequest.getSummary())
                     .status(IssueStatus.OPEN)
                     .priority(IssuePriority.LOW)
                     .snapshotURL(imageURL)
-                    .identifiedBy(ownerOfIssue)
-                    .createdAt(LocalDateTime.now())
+                    .identifiedBy(issueReporter)
+
                     .build();
             return issueRepo.save(issue);
         } catch (Exception e) {
@@ -99,9 +100,9 @@ public class IssueService {
         }
     }
 
-    public Issue update(Long id, Issue issue) throws Exception {
+    public Issue update(String id, Issue issue) throws Exception {
         try {
-            Issue prevIssue = issueRepo.findById(id).orElse(null);
+            Issue prevIssue = issueRepo.findById(UUID.fromString(id)).orElse(null);
             if (prevIssue == null) throw new Exception("No matching record found");
             if (issue.getTitle() != null) prevIssue.setTitle(issue.getTitle());
             if (issue.getStatus() != null) prevIssue.setStatus(issue.getStatus());

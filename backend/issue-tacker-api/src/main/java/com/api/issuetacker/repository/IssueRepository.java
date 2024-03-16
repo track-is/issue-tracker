@@ -9,13 +9,14 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 public interface IssueRepository extends PagingAndSortingRepository<Issue, Long> {
     List<Issue> findByStatus(IssueStatus status, Sort by);
 
     Page<Issue> findByStatus(IssueStatus status, PageRequest pageRequest);
 
-    Optional<Issue> findById(Long id);
+    Optional<Issue> findById(UUID id);
 
     Issue save(Issue issue);
 }

@@ -38,6 +38,16 @@ public class CreateIssueRequest {
     )
     private String description;
 
+    @NotBlank(message = "{not_blank}")
+    @Schema(
+            name = "summary",
+            description = "Summary of issue",
+            type = "String",
+            requiredMode = Schema.RequiredMode.REQUIRED,
+            example = "Sumary of issue"
+    )
+    private String summary;
+
     @Schema(
             name = "snapshot",
             description = "Snapshot of issue",

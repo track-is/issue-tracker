@@ -9,6 +9,7 @@ public enum IssueStatus {
     RE_OPEN,
     VERIFIED,
     CLOSED,
+    REJECTED,
     IN_PROGRESS;
 
     static public boolean isMember(String statusName) {

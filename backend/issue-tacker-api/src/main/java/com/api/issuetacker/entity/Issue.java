@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "issues")
@@ -15,25 +17,24 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Issue {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Issue extends CustomBaseEntity {
 
     private String issueCode;
 
     private String title;
 
-    @Enumerated(EnumType.STRING)
-    private IssueStatus status;
+    private String summary;
 
     private String description;
 
-    @Column(name = "snapshot_url")
-    private String snapshotURL;
+    @Enumerated(EnumType.STRING)
+    private IssueStatus status;
 
     @Enumerated(EnumType.STRING)
     private IssuePriority priority;
+
+    @Column(name = "snapshot_url")
+    private String snapshotURL;
 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.EAGER )
@@ -50,11 +51,21 @@ public class Issue {
     @JoinColumn(name="updatedBy",referencedColumnName = "email")
     private User updatedBy;
 
+    @Column(name="dt_identified_at", updatable = false)
+    private LocalDateTime dtIdentifiedAt = LocalDateTime.now();
 
-    @Column(name="created_at")
-    private LocalDateTime createdAt = LocalDateTime.now();
+    @Column(name="dt_updated_at")
+    private LocalDateTime dtUpdatedAt = LocalDateTime.now();
 
-    @Column(name="updated_at")
-    private LocalDateTime updatedAt = LocalDateTime.now();
+    @Column(name = "target_resolution_date")
+    private LocalDate targetResolutionDate;
 
+    @Column(name = "actual_resolution_date")
+    private LocalDate actualResolutionDate;
+
+    private String resolutionSummary;
+
+    @OneToMany(mappedBy = "issue")
+    private List<IssueHistory> issueHistoryList;
 }
+

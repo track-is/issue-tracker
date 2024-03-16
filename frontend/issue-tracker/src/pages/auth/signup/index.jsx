@@ -4,6 +4,7 @@ import {
   AspectRatio,
   Button,
   Checkbox,
+  ColorSwatch,
   Image,
   Input,
   PasswordInput,
@@ -73,50 +74,50 @@ const SignupPage = () => {
   };
   return (
     <>
-      <div className="flex gap-4 py-8 px-16 items-center rounded-lg bg-violet-50">
-        {/* Left Image */}
-        <div className="hidden md:block md:w-1/2 lg:w-1/2">
-          <img
-            className=""
-            // width="300"
-            // height="300"
-            src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
-            alt="Login Image"
-          />
-        </div>
-
-        {/* Right Login Form */}
-        <section className="w-full rounded-lg dark:bg-gray-900">
-          <div className="flex flex-col items-center justify-center px-6 lg:py-2">
-            <a
-              href="#"
-              className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
-            >
-              <img className="w-8 h-8 mr-2" src={viteLogo} alt="logo" />
-              Track-us
-            </a>
-            <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-xl xl:p-0 dark:bg-gray-800 dark:border-gray-700 drop-shadow-lg">
-              <div className="space-y-4 md:space-y-6 sm:p-6">
-                <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                  Create an account
-                </h1>
-                <form className="space-y-2 md:space-y-2" action="#">
-                  {/* {error && (
+      <div className="flex p-4 sm:justify-center md:justify-center justify-between rounded-lg bg-[#f6f6f6]">
+        {" "}
+        <div
+          className="hidden lg:block lg:w-2/5 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/signup-img.svg')",
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
+          }}
+        ></div>
+        <div className="flex flex-col justify-center items-center">
+          {" "}
+          <p className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+            <img className="w-8 h-8 mr-2" src={viteLogo} alt="logo" />
+            Track-us
+          </p>
+          <div
+            className="bg-white rounded-md p-8"
+            style={{ minWidth: "420px" }}
+          >
+            <div className="flex items-center gap-4">
+              <ColorSwatch size={12} color="rgba(120, 113, 108, 0.5)" />
+              <h3 className="font-bold">Signup Here</h3>
+            </div>
+            <form className="mt-8 space-y-2 md:space-y-2" action="#">
+              {/* {error && (
                   <Alert variant="light" color="red" radius="md">
                     <span className="text-red-800 flex items-center gap-2">
                       <span>Incorrect email or password</span>
                     </span>
                   </Alert>
                 )} */}
-                  <div className="flex gap-2">
-                    <div>
-                      <label
-                        htmlFor="name"
-                        className="block mb-2 text-sm font-medium text-gray-700 dark:text-white"
-                      >
-                        Name
-                      </label>
-                      {/* <input
+              <div className="flex gap-2">
+                <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <ColorSwatch size={5} color="rgba(41,37,36, 0.5)" />
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    Name
+                  </label>
+                </div>
+                  {/* <input
                     type="email"
                     name="email"
                     id="email"
@@ -124,31 +125,34 @@ const SignupPage = () => {
                     placeholder="name@company.com"
                     required=""
                   /> */}
-                      <Input
-                        variant="default"
-                        size="md"
-                        radius="md"
-                        defaultValue="Jane"
-                        placeholder="Jane"
-                        {...register("name")}
-                        leftSection={<MdTextFields size={16} />}
-                      />
-                      {errors.name && (
-                        <Alert variant="light" color="red" radius="md">
-                          <span className="text-red-800 flex items-center gap-2">
-                            <IoInformationCircleOutline /> {errors.name.message}
-                          </span>
-                        </Alert>
-                      )}
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="lastName"
-                        className="block mb-2 text-sm font-medium text-gray-700 dark:text-white"
-                      >
-                        Last Name
-                      </label>
-                      {/* <input
+                  <Input
+                    variant="default"
+                    size="md"
+                    radius="md"
+                    defaultValue="Jane"
+                    placeholder="Jane"
+                    {...register("name")}
+                    leftSection={<MdTextFields size={16} />}
+                  />
+                  {errors.name && (
+                    <Alert variant="light" color="red" radius="md">
+                      <span className="text-red-800 flex items-center gap-2">
+                        <IoInformationCircleOutline /> {errors.name.message}
+                      </span>
+                    </Alert>
+                  )}
+                </div>
+                <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <ColorSwatch size={5} color="rgba(41,37,36, 0.5)" />
+                  <label
+                    htmlFor="lastName"
+                    className="block text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    Last Name
+                  </label>
+                </div>
+                  {/* <input
                     type="email"
                     name="email"
                     id="email"
@@ -156,33 +160,35 @@ const SignupPage = () => {
                     placeholder="name@company.com"
                     required=""
                   /> */}
-                      <Input
-                        variant="default"
-                        size="md"
-                        radius="md"
-                        defaultValue="Foster"
-                        placeholder="Foster"
-                        {...register("lastName")}
-                        leftSection={<MdTextFields size={16} />}
-                      />
-                      {errors.lastName && (
-                        <Alert variant="light" color="red" radius="md">
-                          <span className="text-red-800 flex items-center gap-2">
-                            <IoInformationCircleOutline />{" "}
-                            {errors.lastName.message}
-                          </span>
-                        </Alert>
-                      )}
-                    </div>
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="block mb-2 text-sm font-medium text-gray-700 dark:text-white"
-                    >
-                      Email
-                    </label>
-                    {/* <input
+                  <Input
+                    variant="default"
+                    size="md"
+                    radius="md"
+                    defaultValue="Foster"
+                    placeholder="Foster"
+                    {...register("lastName")}
+                    leftSection={<MdTextFields size={16} />}
+                  />
+                  {errors.lastName && (
+                    <Alert variant="light" color="red" radius="md">
+                      <span className="text-red-800 flex items-center gap-2">
+                        <IoInformationCircleOutline /> {errors.lastName.message}
+                      </span>
+                    </Alert>
+                  )}
+                </div>
+              </div>
+              <div>
+              <div className="flex items-center gap-2 mb-2">
+                  <ColorSwatch size={5} color="rgba(41,37,36, 0.5)" />
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    Email
+                  </label>
+                </div>
+                {/* <input
                     type="email"
                     name="email"
                     id="email"
@@ -190,131 +196,118 @@ const SignupPage = () => {
                     placeholder="name@company.com"
                     required=""
                   /> */}
-                    <Input
-                      variant="default"
-                      size="md"
-                      radius="md"
-                      defaultValue="janefoster@email.com"
-                      placeholder="janefoster@gmail.com"
-                      {...register("email")}
-                      leftSection={<MdEmail size={16} />}
-                    />
-                    {errors.email && (
-                      <Alert variant="light" color="red" radius="md">
-                        <span className="text-red-800 flex items-center gap-2">
-                          <IoInformationCircleOutline /> {errors.email.message}
-                        </span>
-                      </Alert>
-                    )}
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="password"
-                      className="block mb-2 text-sm font-medium text-gray-700 dark:text-white"
-                    >
-                      Password
-                    </label>
-                    {/* <input
-                    type="password"
-                    name="password"
-                    id="password"
-                    placeholder="••••••••"
+                <Input
+                  variant="default"
+                  size="md"
+                  radius="md"
+                  defaultValue="janefoster@email.com"
+                  placeholder="janefoster@gmail.com"
+                  {...register("email")}
+                  leftSection={<MdEmail size={16} />}
+                />
+                {errors.email && (
+                  <Alert variant="light" color="red" radius="md">
+                    <span className="text-red-800 flex items-center gap-2">
+                      <IoInformationCircleOutline /> {errors.email.message}
+                    </span>
+                  </Alert>
+                )}
+              </div>
+              <div className="flex gap-2">
+                <div className="w-full">
+                <div className="flex items-center gap-2 mb-2">
+                  <ColorSwatch size={5} color="rgba(41,37,36, 0.5)" />
+                  <label
+                    htmlFor="password"
+                    className="block text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    Password
+                  </label>
+                </div>
+                  {/* <input
+                    type="email"
+                    name="email"
+                    id="email"
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="name@company.com"
                     required=""
                   /> */}
-                    <PasswordInput
-                      variant="default"
-                      size="md"
-                      radius="md"
-                      placeholder="********"
-                      defaultValue="P@sswd123."
-                      {...register("password")}
-                      leftSection={<RiLockPasswordFill size={16} />}
-                    />
-                    {errors.password && (
-                      <Alert variant="light" color="red" radius="md">
-                        <span className="text-red-800 flex items-center gap-2">
-                          <IoInformationCircleOutline />{" "}
-                          {errors.password.message}
-                        </span>
-                      </Alert>
-                    )}
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="passwordConfirm"
-                      className="block mb-2 text-sm font-medium text-gray-700 dark:text-white"
-                    >
-                      Confirm Password
-                    </label>
-                    {/* <input
-                    type="password"
-                    name="password"
-                    id="password"
-                    placeholder="••••••••"
+                  <PasswordInput
+                    variant="default"
+                    size="md"
+                    radius="md"
+                    placeholder="********"
+                    defaultValue="P@sswd123."
+                    {...register("password")}
+                    leftSection={<RiLockPasswordFill size={16} />}
+                  />
+                  {errors.password && (
+                    <Alert variant="light" color="red" radius="md">
+                      <span className="text-red-800 flex items-center gap-2">
+                        <IoInformationCircleOutline /> {errors.password.message}
+                      </span>
+                    </Alert>
+                  )}
+                </div>
+                <div className="w-full">
+                <div className="flex items-center gap-2 mb-2">
+                  <ColorSwatch size={5} color="rgba(41,37,36, 0.5)" />
+                  <label
+                    htmlFor="passwordConfirm"
+                    className="block text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    Confirm Password
+                  </label>
+                </div>
+                  {/* <input
+                    type="email"
+                    name="email"
+                    id="email"
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="name@company.com"
                     required=""
                   /> */}
-                    <PasswordInput
-                      variant="default"
-                      size="md"
-                      radius="md"
-                      placeholder=""
-                      defaultValue=""
-                      {...register("passwordConfirm")}
-                      leftSection={<RiLockPasswordFill size={16} />}
-                    />
-                    {errors.passwordConfirm && (
-                      <Alert variant="light" color="red" radius="md">
-                        <span className="text-red-800 flex items-center gap-2">
-                          <IoInformationCircleOutline />{" "}
-                          {errors?.passwordConfirm?.message}
-                        </span>
-                      </Alert>
-                    )}
-                  </div>
-                  {/* <div className="flex items-center justify-between">
-                    <div className="flex items-start">
-                      <div className="flex items-center h-5">
-                       
-                        <Checkbox
-                          defaultChecked={false}
-                          label="Remember Me"
-                          color="blue"
-                          size="sm"
-                          {...register("rememberMe")}
-                        />
-                      </div>
-                    
-                    </div>
-                    <a
-                      href="#"
-                      className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
-                    >
-                      Forgot password?
-                    </a>
-                  </div> */}
-                  <div className="mt-4">
-                    <Button
-                      fullWidth
-                      className="text-base cursor-pointer"
-                      variant="filled"
-                      color="blue"
-                      size="sm"
-                      radius="md"
-                      rightSection={
-                        isFormSubmitting ? (
-                          <Spinner />
-                        ) : (
-                          <FaArrowRightLong size={16} />
-                        )
-                      }
-                      disabled={isFormSubmitting}
-                      onClick={onSubmit}
-                    >
-                      Sign Up
-                    </Button>
-                    <p className="text-sm font-light text-gray-500 dark:text-gray-400 mt-2">
+                  <PasswordInput
+                    variant="default"
+                    size="md"
+                    radius="md"
+                    placeholder=""
+                    defaultValue=""
+                    {...register("passwordConfirm")}
+                    leftSection={<RiLockPasswordFill size={16} />}
+                  />
+                  {errors.passwordConfirm && (
+                    <Alert variant="light" color="red" radius="md">
+                      <span className="text-red-800 flex items-center gap-2">
+                        <IoInformationCircleOutline />{" "}
+                        {errors?.passwordConfirm?.message}
+                      </span>
+                    </Alert>
+                  )}
+                </div>
+              </div>
+
+              <Button
+                fullWidth
+                className="text-base cursor-pointer"
+                style={{ marginTop: "24px" }}
+                variant="filled"
+                color="blue"
+                size="sm"
+                radius="md"
+                rightSection={
+                  isFormSubmitting ? (
+                    <Spinner />
+                  ) : (
+                    <FaArrowRightLong size={16} />
+                  )
+                }
+                disabled={isFormSubmitting}
+                onClick={onSubmit}
+              >
+                Sign Up
+              </Button>
+              {/* <p className="text-sm font-light text-gray-500 dark:text-gray-400 mt-2">
                       Already have an account yet?{" "}
                       <Link
                         to="/auth/login"
@@ -322,16 +315,29 @@ const SignupPage = () => {
                       >
                         Sign In
                       </Link>
-                    </p>
-                  </div>
-                </form>
-              </div>
+                    </p> */}
+            </form>
+
+            <div className="mt-7 grid grid-cols-3 items-center text-gray-500">
+              <hr className="border-gray-500" />
+              <p className="text-center text-sm">OR</p>
+              <hr className="border-gray-500" />
             </div>
-          </div>
-        </section>
-        {/* <Button color="violet" onClick={handleLogin}>
-        Please Login
-      </Button> */}
+
+            <div className="text-sm flex justify-between items-center mt-3">
+              <p>Already have an account ?</p>
+              <Link
+                to="/auth/login"
+                className="font-medium text-primary-600 hover:underline dark:text-primary-500"
+              >
+                <Button variant="default"> Sign In</Button>
+              </Link>
+              {/* <button className="py-2 px-5 ml-3 bg-white border rounded-xl hover:scale-110 duration-300 border-blue-400  ">
+                Register
+              </button> */}
+            </div>
+          </div>{" "}
+        </div>{" "}
       </div>
     </>
   );

@@ -11,6 +11,7 @@ import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -18,11 +19,11 @@ import java.time.LocalDateTime;
 public class IssueResponse {
     @Schema(
             name = "id",
-            description = "Long",
+            description = "String id",
             type = "String",
             example = "10"
     )
-    private Long id;
+    private UUID id;
 
     @Schema(
             name = "title",
@@ -39,6 +40,14 @@ public class IssueResponse {
             example = "Description of issue"
     )
     private String description;
+
+    @Schema(
+            name = "summary",
+            description = "Summary of issue",
+            type = "String",
+            example = "Summary of issue"
+    )
+    private String summary;
 
     @Schema(
             name = "Issue Code",
@@ -110,6 +119,7 @@ public class IssueResponse {
                 .title(issue.getTitle())
                 .issueCode(issue.getIssueCode())
                 .description(issue.getDescription())
+                .summary(issue.getSummary())
                 .status(String.valueOf(issue.getStatus()))
                 .priority(String.valueOf(issue.getPriority()))
                 .snapshotURL(issue.getSnapshotURL())

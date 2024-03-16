@@ -1,6 +1,7 @@
 package com.api.issuetacker.entity;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,7 +18,11 @@ public class CustomBaseEntity implements Serializable {
     @Column(name="id", updatable = false, nullable = false)
     private UUID id;
 
+    @Column(name = "created_at")
+    @Builder.Default
     private LocalDateTime createdAt = LocalDateTime.now();
 
+    @Column(name = "updated_at")
+    @Builder.Default
     private LocalDateTime updatedAt = LocalDateTime.now();
 }

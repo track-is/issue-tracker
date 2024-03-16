@@ -1,0 +1,252 @@
+[
+  {
+    "title": "Page not loading properly",
+    "description": "When trying to access the homepage, the page does not load completely. Only the header and footer are visible.",
+    "summary": "Homepage not fully loading"
+  },
+  {
+    "title": "Unable to reset password",
+    "description": "Clicked on the 'Forgot Password' link but did not receive the reset password email.",
+    "summary": "Password reset email not received"
+  },
+  {
+    "title": "Error 404 when accessing profile page",
+    "description": "Every time I try to access my profile page, I encounter a 404 error page.",
+    "summary": "Profile page inaccessible - Error 404"
+  },
+  {
+    "title": "Incorrect billing amount",
+    "description": "Received the latest bill which shows an incorrect amount. It's higher than expected.",
+    "summary": "Billing amount discrepancy"
+  },
+  {
+    "title": "Product page images not loading",
+    "description": "Images on the product page are not loading, only placeholder icons are visible.",
+    "summary": "Product images not loading"
+  },
+  {
+    "title": "Unable to add items to cart",
+    "description": "Clicked on 'Add to Cart' button but nothing happens. Cart remains empty.",
+    "summary": "Items not adding to cart"
+  },
+  {
+    "title": "Login button not working",
+    "description": "Clicking on the 'Login' button does nothing. Unable to access my account.",
+    "summary": "Login button unresponsive"
+  },
+  {
+    "title": "Error message when submitting form",
+    "description": "After filling out the form and hitting submit, an error message appears but it's not clear what the issue is.",
+    "summary": "Form submission error"
+  },
+  {
+    "title": "Slow loading times",
+    "description": "Overall website performance is slow. Pages take a long time to load.",
+    "summary": "Slow website performance"
+  },
+  {
+    "title": "Incorrect order confirmation email",
+    "description": "Received an order confirmation email for a purchase I didn't make. The details are incorrect.",
+    "summary": "Incorrect order confirmation received"
+  },
+  {
+    "title": "Broken links on FAQ page",
+    "description": "Several links on the FAQ page lead to 404 error pages.",
+    "summary": "Broken links on FAQ page"
+  },
+  {
+    "title": "Mobile app crashes upon launch",
+    "description": "Every time I try to open the mobile app, it crashes immediately.",
+    "summary": "Mobile app crashing on launch"
+  },
+  {
+    "title": "Unable to change profile picture",
+    "description": "Clicked on the 'Change Picture' button but nothing happens.",
+    "summary": "Profile picture change not working"
+  },
+  {
+    "title": "Missing tracking information for order",
+    "description": "Ordered a product but did not receive any tracking information. Unable to track the shipment.",
+    "summary": "Missing tracking info for order"
+  },
+  {
+    "title": "Cannot access support page",
+    "description": "When I click on the 'Support' link, it redirects to an error page.",
+    "summary": "Unable to access support page"
+  },
+  {
+    "title": "Search function returning no results",
+    "description": "Using the search bar returns no results, even for common keywords.",
+    "summary": "Search function not working"
+  },
+  {
+    "title": "Incorrect information on product page",
+    "description": "The specifications listed on the product page are inaccurate.",
+    "summary": "Inaccurate product information"
+  },
+  {
+    "title": "Order not delivered",
+    "description": "Placed an order but it hasn't been delivered yet. It's past the expected delivery date.",
+    "summary": "Order not received"
+  },
+  {
+    "title": "Password change not saving",
+    "description": "Changed my password but the new password is not being saved. Unable to log in.",
+    "summary": "Password change not effective"
+  },
+  {
+    "title": "Payment not processing",
+    "description": "Tried to make a payment but it keeps getting declined.",
+    "summary": "Payment processing issue"
+  },
+  {
+    "title": "Invalid coupon code",
+    "description": "Entered a coupon code at checkout but it's being flagged as invalid.",
+    "summary": "Coupon code not working"
+  },
+  {
+    "title": "Cannot unsubscribe from emails",
+    "description": "Clicked on the unsubscribe link in the email but it redirects to an error page.",
+    "summary": "Unable to unsubscribe from emails"
+  },
+  {
+    "title": "Incorrect order received",
+    "description": "Received a different item from what I ordered.",
+    "summary": "Received incorrect order"
+  },
+  {
+    "title": "Error message when updating profile info",
+    "description": "Trying to update my profile information results in an error message.",
+    "summary": "Error updating profile info"
+  },
+  {
+    "title": "Missing buttons on mobile site",
+    "description": "Certain buttons are missing when accessing the website on a mobile device.",
+    "summary": "Buttons missing on mobile site"
+  },
+  {
+    "title": "Issue with checkout process",
+    "description": "Encountering errors during the checkout process. Unable to complete the purchase.",
+    "summary": "Checkout process problem"
+  },
+  {
+    "title": "Unable to download file from account",
+    "description": "Clicked on the download button but the file is not downloading.",
+    "summary": "File download not working"
+  },
+  {
+    "title": "Incorrect balance shown in account",
+    "description": "The balance shown in my account is different from what it should be.",
+    "summary": "Incorrect account balance"
+  },
+  {
+    "title": "Unable to update shipping address",
+    "description": "Trying to update the shipping address but the changes are not saving.",
+    "summary": "Shipping address update issue"
+  },
+  {
+    "title": "Email notifications not being received",
+    "description": "Not receiving any email notifications from the website even though notifications are enabled.",
+    "summary": "Email notifications not working"
+  },
+  {
+    "title": "Unable to access certain pages",
+    "description": "Getting a '403 Forbidden' error when trying to access certain pages on the website.",
+    "summary": "Pages inaccessible - Error 403"
+  },
+  {
+    "title": "Difficulty accessing account on new device",
+    "description": "Tried to log in to my account from a new device but encountered issues.",
+    "summary": "Login issues on new device"
+  },
+  {
+    "title": "Product out of stock despite availability",
+    "description": "Tried to purchase a product listed as available but it's showing as out of stock during checkout.",
+    "summary": "Product falsely listed as available"
+  },
+  {
+    "title": "Unable to reach customer support",
+    "description": "Tried calling customer support but couldn't get through. Also no response to emails.",
+    "summary": "Unable to contact customer support"
+  },
+  {
+    "title": "Incorrect date displayed on order",
+    "description": "Received an order confirmation with the wrong date.",
+    "summary": "Incorrect order date"
+  },
+  {
+    "title": "Cannot update payment method",
+    "description": "Trying to update my payment method but the changes are not saving.",
+    "summary": "Payment method update issue"
+  },
+  {
+    "title": "Issues with image upload",
+    "description": "Trying to upload an image but it's not working. No error message displayed.",
+    "summary": "Image upload problem"
+  },
+  {
+    "title": "Unable to access account settings",
+    "description": "Clicking on the 'Account Settings' link does nothing.",
+    "summary": "Account settings inaccessible"
+  },
+  {
+    "title": "Incorrect tax calculation at checkout",
+    "description": "Tax applied at checkout is higher than it should be based on my location.",
+    "summary": "Incorrect tax calculation"
+  },
+  {
+    "title": "Item missing from order",
+    "description": "Received my order but one of the items is missing.",
+    "summary": "Missing item in order"
+  },
+  {
+    "title": "No response after submitting contact form",
+    "description": "Filled out the contact form but haven't received any response.",
+    "summary": "No response to contact form"
+  },
+  {
+    "title": "Unable to cancel subscription",
+    "description": "Clicked on the 'Cancel Subscription' button but nothing happens.",
+    "summary": "Subscription cancellation not working"
+  },
+  {
+    "title": "Unable to add payment method",
+    "description": "Clicked on the 'Add Payment Method' button but nothing happens.",
+    "summary": "Payment method addition not working"
+  },
+  {
+    "title": "Duplicate charges on credit card",
+    "description": "Checked my credit card statement and noticed duplicate charges from the website.",
+    "summary": "Duplicate charges on credit card"
+  },
+  {
+    "title": "Cannot change account password",
+    "description": "Tried to change my account password but the changes are not saving.",
+    "summary": "Password change not working"
+  },
+  {
+    "title": "Issue with account verification",
+    "description": "Trying to verify my account but not receiving the verification email.",
+    "summary": "Account verification problem"
+  },
+  {
+    "title": "Unable to access order history",
+    "description": "Clicking on 'Order History' leads to a blank page.",
+    "summary": "Order history inaccessible"
+  },
+  {
+    "title": "Unable to reach certain sections of website",
+    "description": "When navigating to certain sections, the page keeps loading indefinitely.",
+    "summary": "Sections of website not loading"
+  },
+  {
+    "title": "Difficulty navigating website on mobile",
+    "description": "Encountering issues with navigation while using the website on a mobile device.",
+    "summary": "Navigation issues on mobile site"
+  },
+  {
+    "title": "Issue with website layout on Firefox browser",
+    "description": "The website layout is broken when viewed on Firefox browser.",
+    "summary": "Layout problem on Firefox browser"
+  }
+]
